@@ -182,3 +182,24 @@ def test_low_confidence_counts_only_scored_clips():
     ]
     agg = aggregate(scores, by=("language",), min_clips=10)[0]
     assert agg.low_confidence is True, "50 excluded clips are not 50 data points"
+
+
+def test_per_shard_budget_covers_every_shard():
+    """The bug this pins: a fixed per-shard read plus a fixed total budget
+    truncated wide configs. Hindi has 193 shards; 40 rows each against a
+    4,000-row budget stopped halfway, reaching 14 districts of roughly 100."""
+    from harness.sample import SampleConfig, per_shard_for
+
+    for shard_count in (1, 9, 36, 193, 400):
+        cfg = SampleConfig(language="Hindi", max_scan=6000)
+        per_shard = per_shard_for(cfg, shard_count)
+        assert per_shard * shard_count >= min(6000, per_shard * shard_count)
+        assert per_shard >= cfg.min_per_shard
+        # the walk must be able to reach the final shard
+        assert per_shard * shard_count >= shard_count * cfg.min_per_shard
+
+
+def test_explicit_per_shard_is_respected():
+    from harness.sample import SampleConfig, per_shard_for
+
+    assert per_shard_for(SampleConfig(language="Hindi", per_shard=7), 193) == 7

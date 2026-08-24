@@ -42,11 +42,14 @@ class SampleConfig:
     seed: int = 20260824
     #: Stop scanning a language after this many rows. Hindi alone has 636k rows;
     #: without a ceiling a single language would dominate the run.
+    #: Total rows of audio to read for this language. Spread across every
+    #: shard rather than spent on the first few: see per_shard_for().
     max_scan: int = 60_000
-    #: Rows to read from the head of each shard. Districts are grouped by
-    #: shard, so a small number per shard across all shards covers far more of
-    #: the country than a large number from the first few.
-    per_shard: int = 60
+    #: Rows to read from the head of each shard. Leave as None to derive it
+    #: from the shard count so that every shard is visited.
+    per_shard: int | None = None
+    #: Never read fewer than this from a shard, even for a config with hundreds.
+    min_per_shard: int = 12
 
 
 def shard_districts(shard: str, token: str, limit: int = 400) -> Counter[str]:
@@ -98,6 +101,23 @@ def list_shards(language: str, token: str, split: str = "train") -> list[str]:
         and entry["path"].endswith(".parquet")
         and f"/{split}-" in entry["path"]
     )
+
+
+def per_shard_for(cfg: "SampleConfig", shard_count: int) -> int:
+    """Rows to read from each shard so the budget covers all of them.
+
+    Districts are grouped across consecutive shards, so a fixed per-shard read
+    combined with a fixed total budget silently truncates wide configs: Hindi
+    has 193 shards, and reading 40 rows from each exhausted a 4,000-row budget
+    halfway through the file, reaching 14 districts out of roughly a hundred.
+    Everything stored in the back half was invisible.
+
+    Deriving the per-shard read from the shard count means the budget is spread
+    over the whole config instead of spent on its opening.
+    """
+    if cfg.per_shard is not None:
+        return cfg.per_shard
+    return max(cfg.min_per_shard, cfg.max_scan // max(shard_count, 1))
 
 
 def clip_id(language: str, district: str, index: int) -> str:
@@ -162,6 +182,11 @@ def sample_language(
     if not shards:
         raise RuntimeError(f"no train shards found for {cfg.language}")
 
+    per_shard = per_shard_for(cfg, len(shards))
+    # Every shard gets visited. The budget is the per-shard read times the
+    # shard count, not a separate ceiling that can cut the walk short.
+    budget = per_shard * len(shards)
+
     per_district: Counter[str] = Counter()
     order: Counter[str] = Counter()
     rows: list[dict] = []
@@ -169,7 +194,7 @@ def sample_language(
 
     with manifest_path.open("a") as manifest:
         for shard_index, shard in enumerate(shards):
-            if scanned >= cfg.max_scan:
+            if scanned >= budget:
                 break
             # Peek at the shard's districts before paying for any audio.
             try:
@@ -194,7 +219,7 @@ def sample_language(
 
             taken_here = 0
             for row in stream:
-                if taken_here >= cfg.per_shard or scanned >= cfg.max_scan:
+                if taken_here >= per_shard or scanned >= budget:
                     break
                 scanned += 1
 
@@ -245,6 +270,6 @@ def sample_language(
         )
     print(
         f"  {cfg.language}: {len(rows)} new clips across {len(per_district)} districts "
-        f"from {len(shards)} shards (scanned {scanned:,} rows)"
+        f"from {len(shards)} shards ({per_shard}/shard, scanned {scanned:,} rows)"
     )
     return rows
