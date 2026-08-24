@@ -1,7 +1,7 @@
 # kya bola?
 
-*"kya bola?" — what did you say? The thing you ask when you didn't catch it.
-Also, apparently, what most speech APIs are thinking outside the metros.*
+*"kya bola?" means "what did you say?" It is what you ask when you did not catch it.*
+*Also, apparently, what most speech APIs are thinking once you leave the metros.*
 
 A district- and language-level benchmark of Indian speech recognition, built on
 the Vaani corpus from ARTPARK/IISc.
@@ -20,9 +20,9 @@ interactive.
 
 ## Layout
 
-- `harness/` — Python. Sampling, providers, scoring, the district crosswalk.
-- `web/` — Next.js site reading precomputed results. No Python at request time.
-- `data/` — boundary files, crosswalk, results JSON. Audio is never committed.
+- `harness/`: Python. Sampling, providers, scoring, the district crosswalk.
+- `web/`: Next.js site reading precomputed results. No Python at request time.
+- `data/`: boundary files, crosswalk, results JSON. Audio is never committed.
 
 ## Rules that matter here
 
