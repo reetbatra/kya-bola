@@ -9,6 +9,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
 from pathlib import Path
 
@@ -42,33 +44,55 @@ def transcribe_all(
     manifest: list[dict],
     data_dir: Path,
     cache_path: Path,
+    workers: int = 4,
 ) -> dict[str, dict]:
-    """Transcribe every clip, skipping anything already cached."""
+    """Transcribe every clip, skipping anything already cached.
+
+    Requests run concurrently because each one spends most of its time
+    uploading audio rather than waiting on the rate limiter. Sequentially the
+    Sarvam run measured about 15 calls/min against a 50/min budget. The shared
+    RateLimiter still enforces the account-wide ceiling across threads, so
+    concurrency spends the quota rather than exceeding it.
+    """
     cache = load_cache(cache_path)
     todo = [c for c in manifest if (provider.name, c["clip_id"]) not in cache]
     print(f"{provider.name}: {len(manifest) - len(todo)} cached, {len(todo)} to fetch")
 
-    with cache_path.open("a") as out:
-        for clip in tqdm(todo, desc=provider.name, unit="clip"):
-            language = get_language(clip["language"])
-            try:
-                result: Transcription = provider.transcribe(
-                    str(data_dir / clip["wav"]), language.request_code
-                )
-            except ProviderQuotaError as exc:
-                # Stop immediately. Continuing would write hundreds of rows that
-                # look like model failures but are really an empty wallet.
+    write_lock = threading.Lock()
+    quota_hit = threading.Event()
+
+    def run_one(clip: dict) -> None:
+        if quota_hit.is_set():
+            return
+        language = get_language(clip["language"])
+        try:
+            result: Transcription = provider.transcribe(
+                str(data_dir / clip["wav"]), language.request_code
+            )
+        except ProviderQuotaError as exc:
+            # Stop everything. Continuing would write rows that look like model
+            # failures but are really an empty wallet.
+            if not quota_hit.is_set():
+                quota_hit.set()
                 print(f"\n!! {exc}")
-                print(f"!! stopping {provider.name} after {len(cache)} cached clips")
-                break
-            row = {
-                "provider": provider.name,
-                "clip_id": clip["clip_id"],
-                **asdict(result),
-            }
+                print(f"!! stopping {provider.name}")
+            return
+        row = {"provider": provider.name, "clip_id": clip["clip_id"], **asdict(result)}
+        with write_lock:
             out.write(json.dumps(row, ensure_ascii=False) + "\n")
             out.flush()
             cache[(provider.name, clip["clip_id"])] = row
+
+    with cache_path.open("a") as out:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            list(
+                tqdm(
+                    pool.map(run_one, todo),
+                    total=len(todo),
+                    desc=provider.name,
+                    unit="clip",
+                )
+            )
 
     return {
         clip_id: row
@@ -148,6 +172,7 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=Path("data/results.json"))
     parser.add_argument("--cache", type=Path, default=Path("data/transcripts.jsonl"))
     parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
 
     manifest = load_manifest(args.manifest)
@@ -158,7 +183,9 @@ def main() -> None:
     summaries = []
     for spec in args.providers:
         provider = build_provider(spec)
-        transcripts = transcribe_all(provider, manifest, args.data_dir, args.cache)
+        transcripts = transcribe_all(
+            provider, manifest, args.data_dir, args.cache, args.workers
+        )
         scores = score_all(manifest, transcripts, provider.name)
         summaries.append(summarize(scores, provider.name))
 
