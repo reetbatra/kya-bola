@@ -3299,9 +3299,9 @@
   },
   {
    "provider": "sarvam:saaras:v4",
-   "clips": 1099,
-   "scored": 1032,
-   "excluded": 67,
+   "clips": 1334,
+   "scored": 1250,
+   "excluded": 84,
    "empty": 6,
    "by_language": [
     {
@@ -3324,13 +3324,13 @@
       "Angika"
      ],
      "provider": "sarvam:saaras:v4",
-     "clips": 4,
-     "scored": 2,
-     "excluded": 2,
-     "wer": 0.2962962962962963,
-     "cer": 0.08928571428571429,
+     "clips": 40,
+     "scored": 35,
+     "excluded": 5,
+     "wer": 0.2710765239948119,
+     "cer": 0.12151515151515152,
      "primary_metric": "wer",
-     "primary": 0.2962962962962963,
+     "primary": 0.2710765239948119,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -3361,6 +3361,21 @@
      "cer": 0.1413733410271206,
      "primary_metric": "wer",
      "primary": 0.37012113055181695,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Bajjika"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 31,
+     "scored": 31,
+     "excluded": 0,
+     "wer": 0.44468085106382976,
+     "cer": 0.16032887975334018,
+     "primary_metric": "wer",
+     "primary": 0.44468085106382976,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -3436,6 +3451,21 @@
      "cer": 0.8738884397736459,
      "primary_metric": "cer",
      "primary": 0.8738884397736459,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Halbi"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 18,
+     "excluded": 2,
+     "wer": 0.725752508361204,
+     "cer": 0.445916114790287,
+     "primary_metric": "wer",
+     "primary": 0.725752508361204,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -3546,6 +3576,21 @@
     },
     {
      "key": [
+      "Kokborok"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 26,
+     "scored": 26,
+     "excluded": 0,
+     "wer": 1.0091185410334347,
+     "cer": 0.6848763657274296,
+     "primary_metric": "wer",
+     "primary": 1.0091185410334347,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
       "Kumaoni"
      ],
      "provider": "sarvam:saaras:v4",
@@ -3586,6 +3631,21 @@
      "cer": 0.07689021785561725,
      "primary_metric": "wer",
      "primary": 0.16485507246376813,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Maithili"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 29,
+     "scored": 24,
+     "excluded": 5,
+     "wer": 0.31160572337042924,
+     "cer": 0.1513157894736842,
+     "primary_metric": "wer",
+     "primary": 0.31160572337042924,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -3646,6 +3706,21 @@
      "cer": 0.5568181818181818,
      "primary_metric": "wer",
      "primary": 1.0394088669950738,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Punjabi"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 64,
+     "scored": 62,
+     "excluded": 2,
+     "wer": 0.20488721804511278,
+     "cer": 0.0868995633187773,
+     "primary_metric": "wer",
+     "primary": 0.20488721804511278,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -3744,14 +3819,14 @@
       "Sumi"
      ],
      "provider": "sarvam:saaras:v4",
-     "clips": 31,
-     "scored": 30,
-     "excluded": 1,
-     "wer": 0.974025974025974,
-     "cer": 0.6255656108597285,
+     "clips": 40,
+     "scored": 36,
+     "excluded": 4,
+     "wer": 0.95662100456621,
+     "cer": 0.5829346092503987,
      "primary_metric": "wer",
-     "primary": 0.974025974025974,
-     "empty_rate": 0.06666666666666667,
+     "primary": 0.95662100456621,
+     "empty_rate": 0.05555555555555555,
      "low_confidence": false
     },
     {
@@ -3811,6 +3886,21 @@
      "cer": 0.19904240766073872,
      "primary_metric": "wer",
      "primary": 0.48,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Tulu"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 18,
+     "excluded": 2,
+     "wer": 0.9567567567567568,
+     "cer": 0.7949756888168558,
+     "primary_metric": "cer",
+     "primary": 0.7949756888168558,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -3893,18 +3983,33 @@
     },
     {
      "key": [
+      "Bangalore"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 19,
+     "excluded": 1,
+     "wer": 0.2708333333333333,
+     "cer": 0.13315926892950392,
+     "primary_metric": "wer",
+     "primary": 0.2708333333333333,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
       "Bastar"
      ],
      "provider": "sarvam:saaras:v4",
-     "clips": 1,
-     "scored": 0,
-     "excluded": 1,
-     "wer": null,
-     "cer": null,
+     "clips": 21,
+     "scored": 18,
+     "excluded": 3,
+     "wer": 0.725752508361204,
+     "cer": 0.445916114790287,
      "primary_metric": "cer",
-     "primary": null,
+     "primary": 0.445916114790287,
      "empty_rate": 0.0,
-     "low_confidence": true
+     "low_confidence": false
     },
     {
      "key": [
@@ -3933,6 +4038,21 @@
      "cer": 0.5319148936170213,
      "primary_metric": "cer",
      "primary": 0.5319148936170213,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Bhagalpur"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 13,
+     "scored": 12,
+     "excluded": 1,
+     "wer": 0.5578512396694215,
+     "cer": 0.24679170779861798,
+     "primary_metric": "wer",
+     "primary": 0.5578512396694215,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -4001,13 +4121,13 @@
       "DakshinaKannada"
      ],
      "provider": "sarvam:saaras:v4",
-     "clips": 20,
-     "scored": 19,
-     "excluded": 1,
-     "wer": 1.0088105726872247,
-     "cer": 0.9901823281907434,
+     "clips": 40,
+     "scored": 37,
+     "excluded": 3,
+     "wer": 0.9854368932038835,
+     "cer": 0.899624060150376,
      "primary_metric": "cer",
-     "primary": 0.9901823281907434,
+     "primary": 0.899624060150376,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -4043,6 +4163,21 @@
     },
     {
      "key": [
+      "Dhalai"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 6,
+     "scored": 6,
+     "excluded": 0,
+     "wer": 0.9791666666666666,
+     "cer": 0.7421875,
+     "primary_metric": "wer",
+     "primary": 0.9791666666666666,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
       "Dhule"
      ],
      "provider": "sarvam:saaras:v4",
@@ -4061,14 +4196,14 @@
       "Dimapur"
      ],
      "provider": "sarvam:saaras:v4",
-     "clips": 91,
-     "scored": 86,
-     "excluded": 5,
-     "wer": 0.905505341002465,
-     "cer": 0.6781137878011276,
+     "clips": 100,
+     "scored": 92,
+     "excluded": 8,
+     "wer": 0.9064587973273942,
+     "cer": 0.6559987865918399,
      "primary_metric": "wer",
-     "primary": 0.905505341002465,
-     "empty_rate": 0.03488372093023256,
+     "primary": 0.9064587973273942,
+     "empty_rate": 0.03260869565217391,
      "low_confidence": false
     },
     {
@@ -4083,6 +4218,21 @@
      "cer": 0.05303030303030303,
      "primary_metric": "wer",
      "primary": 0.23333333333333334,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Fazilka"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 17,
+     "scored": 17,
+     "excluded": 0,
+     "wer": 0.17,
+     "cer": 0.0971563981042654,
+     "primary_metric": "wer",
+     "primary": 0.17,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -4226,13 +4376,13 @@
       "Kapurthala"
      ],
      "provider": "sarvam:saaras:v4",
-     "clips": 20,
-     "scored": 20,
-     "excluded": 0,
-     "wer": 0.6076555023923444,
-     "cer": 0.16610455311973019,
+     "clips": 27,
+     "scored": 26,
+     "excluded": 1,
+     "wer": 0.5335968379446641,
+     "cer": 0.15553925165077037,
      "primary_metric": "wer",
-     "primary": 0.6076555023923444,
+     "primary": 0.5335968379446641,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -4298,6 +4448,21 @@
     },
     {
      "key": [
+      "Lakhisarai"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 12,
+     "scored": 9,
+     "excluded": 3,
+     "wer": 0.3522267206477733,
+     "cer": 0.16241737488196412,
+     "primary_metric": "wer",
+     "primary": 0.3522267206477733,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
       "LowerDibangvalley"
      ],
      "provider": "sarvam:saaras:v4",
@@ -4308,6 +4473,21 @@
      "cer": 0.7467911318553092,
      "primary_metric": "wer",
      "primary": 0.9942528735632183,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Madhepura"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 19,
+     "excluded": 1,
+     "wer": 0.12446351931330472,
+     "cer": 0.06042595344229817,
+     "primary_metric": "wer",
+     "primary": 0.12446351931330472,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -4331,13 +4511,13 @@
       "Muzaffarpur"
      ],
      "provider": "sarvam:saaras:v4",
-     "clips": 3,
-     "scored": 1,
-     "excluded": 2,
-     "wer": 0.1111111111111111,
-     "cer": 0.02666666666666667,
+     "clips": 16,
+     "scored": 13,
+     "excluded": 3,
+     "wer": 0.49612403100775193,
+     "cer": 0.1767485822306238,
      "primary_metric": "wer",
-     "primary": 0.1111111111111111,
+     "primary": 0.49612403100775193,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -4403,6 +4583,36 @@
     },
     {
      "key": [
+      "Pathankot"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 20,
+     "excluded": 0,
+     "wer": 0.19863013698630136,
+     "cer": 0.07033639143730887,
+     "primary_metric": "wer",
+     "primary": 0.19863013698630136,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Purnia"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 1,
+     "scored": 1,
+     "excluded": 0,
+     "wer": 0.2,
+     "cer": 0.043478260869565216,
+     "primary_metric": "wer",
+     "primary": 0.2,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
       "Rohtak"
      ],
      "provider": "sarvam:saaras:v4",
@@ -4433,6 +4643,21 @@
     },
     {
      "key": [
+      "Samastipur"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 1,
+     "scored": 1,
+     "excluded": 0,
+     "wer": 0.22580645161290322,
+     "cer": 0.13533834586466165,
+     "primary_metric": "wer",
+     "primary": 0.22580645161290322,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
       "Sambalpur"
      ],
      "provider": "sarvam:saaras:v4",
@@ -4443,6 +4668,21 @@
      "cer": 0.1889644746787604,
      "primary_metric": "wer",
      "primary": 0.5984848484848485,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Saran"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 5,
+     "scored": 4,
+     "excluded": 1,
+     "wer": 0.24812030075187969,
+     "cer": 0.1507293354943274,
+     "primary_metric": "wer",
+     "primary": 0.24812030075187969,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -4538,6 +4778,21 @@
     },
     {
      "key": [
+      "Supaul"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 5,
+     "scored": 5,
+     "excluded": 0,
+     "wer": 0.2608695652173913,
+     "cer": 0.12371134020618557,
+     "primary_metric": "wer",
+     "primary": 0.2608695652173913,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
       "TehriGarhwal"
      ],
      "provider": "sarvam:saaras:v4",
@@ -4556,13 +4811,28 @@
       "Uttarkashi"
      ],
      "provider": "sarvam:saaras:v4",
-     "clips": 20,
-     "scored": 17,
-     "excluded": 3,
-     "wer": 0.2330508474576271,
-     "cer": 0.11594936708860759,
+     "clips": 26,
+     "scored": 22,
+     "excluded": 4,
+     "wer": 0.2483221476510067,
+     "cer": 0.12231930103256553,
      "primary_metric": "wer",
-     "primary": 0.2330508474576271,
+     "primary": 0.2483221476510067,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Vaishali"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 20,
+     "excluded": 0,
+     "wer": 0.37916666666666665,
+     "cer": 0.13768844221105528,
+     "primary_metric": "wer",
+     "primary": 0.37916666666666665,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -4593,6 +4863,21 @@
      "cer": 0.578494623655914,
      "primary_metric": "wer",
      "primary": 0.9072164948453608,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "WestTripura"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 20,
+     "excluded": 0,
+     "wer": 1.0142348754448398,
+     "cer": 0.6749831422791639,
+     "primary_metric": "wer",
+     "primary": 1.0142348754448398,
      "empty_rate": 0.0,
      "low_confidence": false
     }
@@ -4633,6 +4918,22 @@
     {
      "key": [
       "Angika",
+      "Bhagalpur"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 13,
+     "scored": 12,
+     "excluded": 1,
+     "wer": 0.5578512396694215,
+     "cer": 0.24679170779861798,
+     "primary_metric": "wer",
+     "primary": 0.5578512396694215,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Angika",
       "Katihar"
      ],
      "provider": "sarvam:saaras:v4",
@@ -4649,16 +4950,64 @@
     {
      "key": [
       "Angika",
+      "Madhepura"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 19,
+     "excluded": 1,
+     "wer": 0.12446351931330472,
+     "cer": 0.06042595344229817,
+     "primary_metric": "wer",
+     "primary": 0.12446351931330472,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Angika",
       "Muzaffarpur"
      ],
      "provider": "sarvam:saaras:v4",
-     "clips": 3,
+     "clips": 4,
      "scored": 1,
-     "excluded": 2,
+     "excluded": 3,
      "wer": 0.1111111111111111,
      "cer": 0.02666666666666667,
      "primary_metric": "wer",
      "primary": 0.1111111111111111,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Angika",
+      "Purnia"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 1,
+     "scored": 1,
+     "excluded": 0,
+     "wer": 0.2,
+     "cer": 0.043478260869565216,
+     "primary_metric": "wer",
+     "primary": 0.2,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Angika",
+      "Samastipur"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 1,
+     "scored": 1,
+     "excluded": 0,
+     "wer": 0.22580645161290322,
+     "cer": 0.13533834586466165,
+     "primary_metric": "wer",
+     "primary": 0.22580645161290322,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -4787,6 +5136,38 @@
      "cer": 0.16834339369550638,
      "primary_metric": "wer",
      "primary": 0.4507462686567164,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Bajjika",
+      "Muzaffarpur"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 11,
+     "scored": 11,
+     "excluded": 0,
+     "wer": 0.5130434782608696,
+     "cer": 0.18401682439537329,
+     "primary_metric": "wer",
+     "primary": 0.5130434782608696,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Bajjika",
+      "Vaishali"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 20,
+     "excluded": 0,
+     "wer": 0.37916666666666665,
+     "cer": 0.13768844221105528,
+     "primary_metric": "wer",
+     "primary": 0.37916666666666665,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -4963,6 +5344,22 @@
      "cer": 0.8738884397736459,
      "primary_metric": "cer",
      "primary": 0.8738884397736459,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Halbi",
+      "Bastar"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 18,
+     "excluded": 2,
+     "wer": 0.725752508361204,
+     "cer": 0.445916114790287,
+     "primary_metric": "wer",
+     "primary": 0.725752508361204,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -5272,6 +5669,38 @@
     },
     {
      "key": [
+      "Kokborok",
+      "Dhalai"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 6,
+     "scored": 6,
+     "excluded": 0,
+     "wer": 0.9791666666666666,
+     "cer": 0.7421875,
+     "primary_metric": "wer",
+     "primary": 0.9791666666666666,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Kokborok",
+      "WestTripura"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 20,
+     "excluded": 0,
+     "wer": 1.0142348754448398,
+     "cer": 0.6749831422791639,
+     "primary_metric": "wer",
+     "primary": 1.0142348754448398,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
       "Kumaoni",
       "TehriGarhwal"
      ],
@@ -5347,6 +5776,86 @@
      "cer": 0.11416781292984869,
      "primary_metric": "wer",
      "primary": 0.21764705882352942,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Maithili",
+      "Lakhisarai"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 12,
+     "scored": 9,
+     "excluded": 3,
+     "wer": 0.3522267206477733,
+     "cer": 0.16241737488196412,
+     "primary_metric": "wer",
+     "primary": 0.3522267206477733,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Maithili",
+      "Muzaffarpur"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 1,
+     "scored": 1,
+     "excluded": 0,
+     "wer": 0.8,
+     "cer": 0.3125,
+     "primary_metric": "wer",
+     "primary": 0.8,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Maithili",
+      "Saran"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 5,
+     "scored": 4,
+     "excluded": 1,
+     "wer": 0.24812030075187969,
+     "cer": 0.1507293354943274,
+     "primary_metric": "wer",
+     "primary": 0.24812030075187969,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Maithili",
+      "Supaul"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 5,
+     "scored": 5,
+     "excluded": 0,
+     "wer": 0.2608695652173913,
+     "cer": 0.12371134020618557,
+     "primary_metric": "wer",
+     "primary": 0.2608695652173913,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Maithili",
+      "Uttarkashi"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 6,
+     "scored": 5,
+     "excluded": 1,
+     "wer": 0.3064516129032258,
+     "cer": 0.14548802946593,
+     "primary_metric": "wer",
+     "primary": 0.3064516129032258,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -5475,6 +5984,70 @@
      "cer": 0.5568181818181818,
      "primary_metric": "wer",
      "primary": 1.0394088669950738,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Punjabi",
+      "Bangalore"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 19,
+     "excluded": 1,
+     "wer": 0.2708333333333333,
+     "cer": 0.13315926892950392,
+     "primary_metric": "wer",
+     "primary": 0.2708333333333333,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Punjabi",
+      "Fazilka"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 17,
+     "scored": 17,
+     "excluded": 0,
+     "wer": 0.17,
+     "cer": 0.0971563981042654,
+     "primary_metric": "wer",
+     "primary": 0.17,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Punjabi",
+      "Kapurthala"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 7,
+     "scored": 6,
+     "excluded": 1,
+     "wer": 0.18181818181818182,
+     "cer": 0.0847457627118644,
+     "primary_metric": "wer",
+     "primary": 0.18181818181818182,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
+      "Punjabi",
+      "Pathankot"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 20,
+     "excluded": 0,
+     "wer": 0.19863013698630136,
+     "cer": 0.07033639143730887,
+     "primary_metric": "wer",
+     "primary": 0.19863013698630136,
      "empty_rate": 0.0,
      "low_confidence": false
     },
@@ -5660,14 +6233,14 @@
       "Dimapur"
      ],
      "provider": "sarvam:saaras:v4",
-     "clips": 11,
-     "scored": 10,
-     "excluded": 1,
-     "wer": 0.9380530973451328,
-     "cer": 0.691437802907916,
+     "clips": 20,
+     "scored": 16,
+     "excluded": 4,
+     "wer": 0.9259259259259259,
+     "cer": 0.5768947755702722,
      "primary_metric": "wer",
-     "primary": 0.9380530973451328,
-     "empty_rate": 0.2,
+     "primary": 0.9259259259259259,
+     "empty_rate": 0.125,
      "low_confidence": false
     },
     {
@@ -5752,6 +6325,22 @@
     },
     {
      "key": [
+      "Tulu",
+      "DakshinaKannada"
+     ],
+     "provider": "sarvam:saaras:v4",
+     "clips": 20,
+     "scored": 18,
+     "excluded": 2,
+     "wer": 0.9567567567567568,
+     "cer": 0.7949756888168558,
+     "primary_metric": "cer",
+     "primary": 0.7949756888168558,
+     "empty_rate": 0.0,
+     "low_confidence": false
+    },
+    {
+     "key": [
       "Urdu",
       "Anantpur"
      ],
@@ -5815,8 +6404,8 @@
      "low_confidence": false
     }
    ],
-   "district_mean_wer": 0.5211491446486777,
-   "district_std_wer": 0.277921729975928
+   "district_mean_wer": 0.5010685085873359,
+   "district_std_wer": 0.278284824638335
   }
  ]
 }

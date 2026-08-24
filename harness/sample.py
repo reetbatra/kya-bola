@@ -50,6 +50,11 @@ class SampleConfig:
     per_shard: int | None = None
     #: Never read fewer than this from a shard, even for a config with hundreds.
     min_per_shard: int = 12
+    #: Never read more than this from one shard. A config with few shards would
+    #: otherwise spend the whole budget on its first one: Tamil has 6 shards, so
+    #: a 6,000-row budget meant 1,000 rows (roughly 170 MB) per shard just to
+    #: fill a 20-clip quota per district.
+    max_per_shard: int = 200
 
 
 def shard_districts(shard: str, token: str, limit: int = 400) -> Counter[str]:
@@ -117,7 +122,8 @@ def per_shard_for(cfg: "SampleConfig", shard_count: int) -> int:
     """
     if cfg.per_shard is not None:
         return cfg.per_shard
-    return max(cfg.min_per_shard, cfg.max_scan // max(shard_count, 1))
+    spread = cfg.max_scan // max(shard_count, 1)
+    return max(cfg.min_per_shard, min(cfg.max_per_shard, spread))
 
 
 def clip_id(language: str, district: str, index: int) -> str:
@@ -173,10 +179,15 @@ def sample_language(
         )
 
     manifest_path = manifest_path or out_dir / "manifest.jsonl"
+    # Read every manifest, not just this worker's. Parallel workers and re-runs
+    # write to separate files, and checking only our own meant re-downloading
+    # clips another worker had already fetched.
     seen: set[str] = set()
-    if manifest_path.exists():
-        with manifest_path.open() as fh:
-            seen = {json.loads(line)["clip_id"] for line in fh if line.strip()}
+    for path in sorted(out_dir.glob("manifest*.jsonl")):
+        with path.open() as fh:
+            for line in fh:
+                if line.strip():
+                    seen.add(json.loads(line)["clip_id"])
 
     shards = list_shards(cfg.language, token)
     if not shards:
