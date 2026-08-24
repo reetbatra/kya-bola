@@ -13,6 +13,7 @@ from dataclasses import asdict, dataclass
 
 import jiwer
 
+from harness.annotations import clean_reference
 from harness.languages import get as get_language
 from harness.normalize import normalize
 
@@ -34,6 +35,7 @@ class ClipScore:
     ref_chars: int
     script: str
     empty_hypothesis: bool
+    excluded: str | None
     reference_norm: str
     hypothesis_norm: str
 
@@ -44,11 +46,28 @@ class ClipScore:
 def score_pair(reference: str, hypothesis: str | None) -> dict:
     """Score one reference/hypothesis pair.
 
+    The reference is first stripped of Vaani transcriber annotations. Scored
+    raw, `<noise>` tags and `{english}` glosses invent errors no model made.
+
     A None or blank hypothesis is a total miss (WER 1.0), not a skip -- an API
     that refuses to answer for an unsupported language has failed the clip, and
     dropping those rows would flatter every provider that gives up early.
+
+    A reference the human transcriber marked unintelligible is a different case:
+    the ground truth itself is untrustworthy, so it scores None and is excluded
+    rather than blamed on the model.
     """
-    ref_norm, script = normalize(reference)
+    cleaned = clean_reference(reference)
+    if not cleaned.usable:
+        return {
+            "wer": None, "cer": None, "ref_words": 0, "ref_chars": 0,
+            "script": "Unknown",
+            "empty_hypothesis": not (hypothesis or "").strip(),
+            "reference_norm": "", "hypothesis_norm": "",
+            "excluded": "uncertain_reference" if cleaned.uncertain else "empty_reference",
+        }
+
+    ref_norm, script = normalize(cleaned.text)
     hyp_norm, _ = normalize(hypothesis or "", script=script)
 
     if not ref_norm:
@@ -56,6 +75,7 @@ def score_pair(reference: str, hypothesis: str | None) -> dict:
             "wer": None, "cer": None, "ref_words": 0, "ref_chars": 0,
             "script": script, "empty_hypothesis": not hyp_norm,
             "reference_norm": "", "hypothesis_norm": hyp_norm,
+            "excluded": "empty_reference",
         }
 
     if not hyp_norm:
@@ -64,6 +84,7 @@ def score_pair(reference: str, hypothesis: str | None) -> dict:
             "ref_words": len(ref_norm.split()), "ref_chars": len(ref_norm),
             "script": script, "empty_hypothesis": True,
             "reference_norm": ref_norm, "hypothesis_norm": "",
+            "excluded": None,
         }
 
     return {
@@ -75,6 +96,7 @@ def score_pair(reference: str, hypothesis: str | None) -> dict:
         "empty_hypothesis": False,
         "reference_norm": ref_norm,
         "hypothesis_norm": hyp_norm,
+        "excluded": None,
     }
 
 

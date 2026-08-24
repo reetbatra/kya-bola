@@ -63,6 +63,11 @@ _DIGIT_MAP = {base + i: str(i) for base in _DIGIT_BASES for i in range(10)}
 
 _WS = re.compile(r"\s+")
 
+# Characters that Unicode classifies as punctuation but which function as
+# letters in an Indic orthography. U+00B7 (raka) is a letter in Garo, which is
+# written in Latin script: stripping it merges "ong·a" into "onga".
+_KEEP_PUNCT = frozenset("\u00b7")
+
 
 def detect_script(text: str) -> str:
     """Return the dominant script of `text`, ignoring spaces and digits."""
@@ -90,7 +95,7 @@ def strip_punct_and_symbols(text: str) -> str:
     out = []
     for ch in text:
         cat = unicodedata.category(ch)
-        if cat[0] in ("P", "S"):
+        if cat[0] in ("P", "S") and ch not in _KEEP_PUNCT:
             out.append(" ")
         else:
             out.append(ch)

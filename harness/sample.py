@@ -11,6 +11,7 @@ the identical clips and nobody gets billed twice for a different sample.
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import os
 from collections import Counter
@@ -19,7 +20,7 @@ from pathlib import Path
 
 import numpy as np
 import soundfile as sf
-from datasets import load_dataset
+from datasets import Audio, load_dataset
 
 from harness.languages import config_name, get as get_language
 
@@ -50,9 +51,14 @@ def clip_id(language: str, district: str, index: int) -> str:
 
 
 def _to_wav(audio: dict, path: Path) -> float:
-    """Write a decoded HF audio dict to 16 kHz mono WAV. Returns duration."""
-    array = np.asarray(audio["array"], dtype=np.float32)
-    sr = int(audio["sampling_rate"])
+    """Write an undecoded HF audio row to 16 kHz mono WAV. Returns duration.
+
+    We take the raw bytes rather than letting `datasets` decode. Since v4 that
+    path requires `torchcodec`, which drags in torch and couples us to a
+    specific ffmpeg major version; soundfile reads these WAVs directly.
+    """
+    array, sr = sf.read(io.BytesIO(audio["bytes"]), dtype="float32", always_2d=False)
+    array = np.asarray(array, dtype=np.float32)
     if array.ndim > 1:
         array = array.mean(axis=1)
     if sr != TARGET_SR:
@@ -103,7 +109,9 @@ def sample_language(
         split="train",
         streaming=True,
         token=token,
-    ).shuffle(seed=cfg.seed, buffer_size=cfg.shuffle_buffer)
+    ).cast_column("audio", Audio(decode=False)).shuffle(
+        seed=cfg.seed, buffer_size=cfg.shuffle_buffer
+    )
 
     per_district: Counter[str] = Counter()
     order: Counter[str] = Counter()
