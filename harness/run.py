@@ -117,6 +117,11 @@ def build_provider(spec: str) -> Provider:
         from harness.providers.sarvam import SarvamProvider
 
         return SarvamProvider(model=spec.split("sarvam:", 1)[1])
+    if spec.startswith("elevenlabs"):
+        from harness.providers.elevenlabs import DEFAULT_MODEL, ElevenLabsProvider
+
+        _, _, model = spec.partition(":")
+        return ElevenLabsProvider(model=model or DEFAULT_MODEL)
     raise ValueError(f"unknown provider {spec!r}")
 
 

@@ -11,3 +11,7 @@ data/trial_*
 data/transcripts.jsonl
 data/results.json
 data/manifest.jsonl
+.env.bak
+*.bak
+.env.*
+!.env.example
