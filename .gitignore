@@ -7,14 +7,20 @@ data/clips/
 data/raw/
 node_modules/
 .next/
-data/trial_*
 data/transcripts.jsonl
-data/results.json
-data/manifest.jsonl
 .env.bak
 *.bak
 .env.*
 !.env.example
 data/bench_clips/
-data/bench_*
-data/calibration.json
+
+# Results the site builds from must be committed.
+!data/results.json
+!data/calibration.json
+data/manifest.jsonl
+data/bench_manifest.jsonl
+data/bench_transcripts.jsonl
+data/trial_manifest.jsonl
+data/trial_transcripts.jsonl
+data/trial_results.json
+data/garo_manifest.jsonl
