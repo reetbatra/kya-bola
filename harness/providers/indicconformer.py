@@ -66,17 +66,26 @@ class IndicConformerProvider(Provider):
                 failure_kind="refusal",
             )
 
+        import numpy as np
+        import soundfile as sf
         import torch
-        import torchaudio
 
         started = time.monotonic()
         try:
             model = self._load()
-            wav, sr = torchaudio.load(wav_path)
+            # soundfile rather than torchaudio.load: recent torchaudio routes
+            # loading through TorchCodec, which pulls in a heavy dependency and
+            # pins an ffmpeg major version. The clips are already 16 kHz mono
+            # PCM written by our own sampler.
+            audio, sr = sf.read(wav_path, dtype="float32", always_2d=False)
+            audio = np.asarray(audio, dtype=np.float32)
+            if audio.ndim > 1:
+                audio = audio.mean(axis=1)
+            wav = torch.from_numpy(audio).unsqueeze(0)
             if sr != 16_000:
+                import torchaudio
+
                 wav = torchaudio.functional.resample(wav, sr, 16_000)
-            if wav.shape[0] > 1:
-                wav = wav.mean(dim=0, keepdim=True)
             with torch.no_grad():
                 text = model(wav.to(self._device), iso, self.decoding)
         except Exception as exc:  # noqa: BLE001
