@@ -15,3 +15,6 @@ data/manifest.jsonl
 *.bak
 .env.*
 !.env.example
+data/bench_clips/
+data/bench_*
+data/calibration.json

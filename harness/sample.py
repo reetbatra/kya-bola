@@ -19,6 +19,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
+import requests
 import soundfile as sf
 from datasets import Audio, load_dataset
 
@@ -42,7 +43,36 @@ class SampleConfig:
     #: Stop scanning a language after this many rows. Hindi alone has 636k rows;
     #: without a ceiling a single language would dominate the run.
     max_scan: int = 60_000
-    shuffle_buffer: int = 10_000
+    #: Rows to read from the head of each shard. Districts are grouped by
+    #: shard, so a small number per shard across all shards covers far more of
+    #: the country than a large number from the first few.
+    per_shard: int = 60
+
+
+def list_shards(language: str, token: str, split: str = "train") -> list[str]:
+    """Every parquet shard for a language config, in repo order.
+
+    Streaming a config sequentially reads shards in order and stops wherever the
+    scan budget runs out, so it only ever sees the districts stored near the
+    front of the file. Hindi has 250 shards; a sequential scan of 2,500 rows
+    reached 15 districts out of roughly a hundred. Addressing shards explicitly
+    is what makes district coverage a property of the sampler rather than an
+    accident of where the budget ran out.
+    """
+    response = requests.get(
+        "https://huggingface.co/api/datasets/"
+        f"{DATASET}/tree/main/audio/{language}?recursive=true",
+        headers={"Authorization": f"Bearer {token}"},
+        timeout=90,
+    )
+    response.raise_for_status()
+    return sorted(
+        entry["path"]
+        for entry in response.json()
+        if entry.get("type") == "file"
+        and entry["path"].endswith(".parquet")
+        and f"/{split}-" in entry["path"]
+    )
 
 
 def clip_id(language: str, district: str, index: int) -> str:
@@ -103,69 +133,73 @@ def sample_language(
         with manifest_path.open() as fh:
             seen = {json.loads(line)["clip_id"] for line in fh if line.strip()}
 
-    stream = load_dataset(
-        DATASET,
-        config_name(cfg.language),
-        split="train",
-        streaming=True,
-        token=token,
-    ).cast_column("audio", Audio(decode=False)).shuffle(
-        seed=cfg.seed, buffer_size=cfg.shuffle_buffer
-    )
+    shards = list_shards(cfg.language, token)
+    if not shards:
+        raise RuntimeError(f"no train shards found for {cfg.language}")
 
     per_district: Counter[str] = Counter()
     order: Counter[str] = Counter()
     rows: list[dict] = []
     scanned = 0
-    district_arrival: list[str] = []
 
     with manifest_path.open("a") as manifest:
-        for row in stream:
-            scanned += 1
-            if scanned > cfg.max_scan:
+        for shard_index, shard in enumerate(shards):
+            if scanned >= cfg.max_scan:
                 break
-
-            district = (row.get("district") or "Unknown").strip()
-            if len(district_arrival) < 2_000:
-                district_arrival.append(district)
-
-            transcript = (row.get("transcript") or "").strip()
-            if not transcript:
-                continue
-            if per_district[district] >= cfg.per_cell:
-                continue
-
-            index = order[district]
-            order[district] += 1
-            cid = clip_id(cfg.language, district, index)
-            if cid in seen:
-                per_district[district] += 1
-                continue
-
-            wav_path = out_dir / "clips" / cfg.language / district / f"{cid}.wav"
+            url = f"hf://datasets/{DATASET}/{shard}"
             try:
-                duration = _to_wav(row["audio"], wav_path)
-            except Exception as exc:  # noqa: BLE001 - record and move on
-                print(f"  ! decode failed for {cid}: {type(exc).__name__}: {exc}")
+                stream = load_dataset(
+                    "parquet", data_files=url, split="train",
+                    streaming=True, token=token,
+                ).cast_column("audio", Audio(decode=False))
+            except Exception as exc:  # noqa: BLE001
+                print(f"  ! {cfg.language} shard {shard_index}: {type(exc).__name__}: {exc}")
                 continue
 
-            record = {
-                "clip_id": cid,
-                "language": cfg.language,
-                "sarvam_code": language.request_code,
-                "sarvam_supported": language.supported,
-                "state": (row.get("state") or "Unknown").strip(),
-                "district": district,
-                "transcript": transcript,
-                "duration_s": round(duration, 3),
-                "wav": str(wav_path.relative_to(out_dir)),
-            }
-            manifest.write(json.dumps(record, ensure_ascii=False) + "\n")
-            manifest.flush()
-            rows.append(record)
-            per_district[district] += 1
+            taken_here = 0
+            for row in stream:
+                if taken_here >= cfg.per_shard or scanned >= cfg.max_scan:
+                    break
+                scanned += 1
 
-    _report_ordering(cfg.language, district_arrival)
+                district = (row.get("district") or "Unknown").strip()
+                transcript = (row.get("transcript") or "").strip()
+                if not transcript or per_district[district] >= cfg.per_cell:
+                    continue
+
+                index = order[district]
+                order[district] += 1
+                cid = clip_id(cfg.language, district, index)
+                if cid in seen:
+                    per_district[district] += 1
+                    taken_here += 1
+                    continue
+
+                wav_path = out_dir / "clips" / cfg.language / district / f"{cid}.wav"
+                try:
+                    duration = _to_wav(row["audio"], wav_path)
+                except Exception as exc:  # noqa: BLE001 - record and move on
+                    print(f"  ! decode failed for {cid}: {type(exc).__name__}: {exc}")
+                    continue
+
+                record = {
+                    "clip_id": cid,
+                    "language": cfg.language,
+                    "sarvam_code": language.request_code,
+                    "sarvam_supported": language.supported,
+                    "state": (row.get("state") or "Unknown").strip(),
+                    "district": district,
+                    "transcript": transcript,
+                    "duration_s": round(duration, 3),
+                    "wav": str(wav_path.relative_to(out_dir)),
+                    "shard": shard_index,
+                }
+                manifest.write(json.dumps(record, ensure_ascii=False) + "\n")
+                manifest.flush()
+                rows.append(record)
+                per_district[district] += 1
+                taken_here += 1
+
     thin = [d for d, n in per_district.items() if n < cfg.min_cell]
     if thin:
         print(
@@ -175,27 +209,6 @@ def sample_language(
         )
     print(
         f"  {cfg.language}: {len(rows)} new clips across {len(per_district)} districts "
-        f"(scanned {scanned:,} rows)"
+        f"from {len(shards)} shards (scanned {scanned:,} rows)"
     )
     return rows
-
-
-def _report_ordering(language: str, arrival: list[str]) -> None:
-    """Warn if districts arrive in contiguous blocks.
-
-    Streaming shuffle only reorders shards plus a local buffer. If a config
-    stores one district per shard, an early stop would systematically miss the
-    districts at the end of the file, which would bias the map. This check makes
-    that visible instead of silent.
-    """
-    if len(arrival) < 100:
-        return
-    switches = sum(1 for a, b in zip(arrival, arrival[1:]) if a != b)
-    distinct = len(set(arrival))
-    if distinct > 1 and switches < distinct * 2:
-        print(
-            f"  ! {language}: districts arrive in blocks "
-            f"({switches} switches over {distinct} districts in {len(arrival)} rows). "
-            "Sampling may be biased toward early shards - raise max_scan or "
-            "sample per-shard before trusting these cells."
-        )
