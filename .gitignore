@@ -25,3 +25,6 @@ data/trial_transcripts.jsonl
 data/trial_results.json
 data/garo_manifest.jsonl
 .gstack/
+data/manifest.worker*.jsonl
+data/manifest.resample*.jsonl
+!data/manifest.jsonl
