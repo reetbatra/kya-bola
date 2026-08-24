@@ -100,6 +100,11 @@ out, which reached 15 districts out of roughly a hundred. District coverage
 should be a property of the sampler, not an accident of where the budget ran
 out.
 
+**Scan metadata before paying for audio.** Audio bytes dominate every row, so
+reading a shard with the audio column attached runs at about 179 rows/minute
+against 2,387 with parquet column pushdown. The sampler peeks at a shard's
+districts first and skips the shard entirely when they are all already full.
+
 **The map has legal constraints.** District polygons come from geoBoundaries
 `gbOpen` IND ADM2, which is derived from India's own LGD directory. The
 per-country file is used deliberately: geoBoundaries' CGAZ composite follows US
