@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="kya bola">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2ea87a"/>
+      <stop offset="1" stop-color="#15795a"/>
+    </linearGradient>
+  </defs>
+  <!-- speech bubble: the "kya bola?" of a listener who did not catch it -->
+  <path fill="url(#g)"
+        d="M12 6h40a8 8 0 0 1 8 8v26a8 8 0 0 1-8 8H28l-13 11a1.6 1.6 0 0 1-2.6-1.2V48h-.4a8 8 0 0 1-8-8V14a8 8 0 0 1 8-8z"/>
+  <!-- question mark, drawn as strokes so it stays crisp at 16px -->
+  <g fill="none" stroke="#ffffff" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24.5 21.5a7.8 7.8 0 1 1 9.2 8.1v4.6"/>
+  </g>
+  <circle cx="33.7" cy="41.4" r="3.4" fill="#ffffff"/>
+</svg>

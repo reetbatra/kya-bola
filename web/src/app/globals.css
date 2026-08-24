@@ -3,45 +3,86 @@
 :root {
   --bg: #fbfaf7;
   --surface: #ffffff;
-  --text: #1a1917;
-  --muted: #6b6862;
-  --border: #e3e0d8;
-  --accent: #1a7f5a;
-  --no-data: #ded9cf;
+  --surface-2: #f4f2ec;
+  --text: #17150f;
+  --muted: #5f5b52;
+  --border: #e2ded4;
+  --accent: #15795a;
+  --on-accent: #ffffff;
+  --no-data: #dcd7cb;
   --map-stroke: #fbfaf7;
+  --focus: #15795a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #14140f;
-    --surface: #1c1c17;
-    --text: #efece4;
-    --muted: #9a958a;
-    --border: #2e2e26;
-    --accent: #3fbf8a;
-    --no-data: #2b2b23;
-    --map-stroke: #14140f;
+    --bg: #121210;
+    --surface: #1a1a17;
+    --surface-2: #23231e;
+    --text: #f2efe7;
+    --muted: #a8a296;
+    --border: #302f27;
+    --accent: #46c894;
+    --on-accent: #0c1a14;
+    --no-data: #2c2b24;
+    --map-stroke: #121210;
+    --focus: #46c894;
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #14140f;
-  --surface: #1c1c17;
-  --text: #efece4;
-  --muted: #9a958a;
-  --border: #2e2e26;
-  --accent: #3fbf8a;
-  --no-data: #2b2b23;
-  --map-stroke: #14140f;
+  --bg: #121210;
+  --surface: #1a1a17;
+  --surface-2: #23231e;
+  --text: #f2efe7;
+  --muted: #a8a296;
+  --border: #302f27;
+  --accent: #46c894;
+  --on-accent: #0c1a14;
+  --no-data: #2c2b24;
+  --map-stroke: #121210;
+  --focus: #46c894;
 }
 
-html { color-scheme: light dark; }
+html {
+  color-scheme: light dark;
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
+h1, h2, h3, .serif {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
 .tabular { font-variant-numeric: tabular-nums; }
+
+/* One visible focus treatment everywhere, so keyboard users are never lost. */
+:where(a, button, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border-width: 0;
+}
