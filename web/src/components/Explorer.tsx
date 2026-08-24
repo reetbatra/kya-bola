@@ -126,8 +126,12 @@ export function Explorer({ topology, runs, unmapped }: Props) {
           <h3 className="mb-2 font-semibold">This view</h3>
           <dl className="space-y-1 text-[var(--muted)]">
             <div className="flex justify-between">
-              <dt>districts shown</dt>
+              <dt>districts measured</dt>
               <dd className="tabular text-[var(--text)]">{measured}</dd>
+            </div>
+            <div className="flex justify-between">
+              <dt>districts in the corpus</dt>
+              <dd className="tabular text-[var(--text)]">165</dd>
             </div>
             <div className="flex justify-between">
               <dt>clips scored</dt>

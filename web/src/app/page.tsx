@@ -54,8 +54,11 @@ export default function Home() {
 
       <section className="mb-16">
         <h2 className="mb-1 text-2xl font-semibold">The map</h2>
-        <p className="mb-6 text-[var(--muted)]">
-          Error rate per district. Greener is better.
+        <p className="mb-6 max-w-2xl text-[var(--muted)]">
+          Error rate per district. Greener is better. Grey is not a gap in the
+          measurement: Project Vaani has recorded 165 of India&rsquo;s districts so
+          far, and the rest of the country has no transcribed audio in this
+          corpus to score against.
         </p>
         <Explorer topology={topology} runs={results.runs} unmapped={unmapped} />
       </section>
