@@ -217,10 +217,16 @@ def sample_language(
                 print(f"  ! {cfg.language} shard {shard_index}: {type(exc).__name__}: {exc}")
                 continue
 
-            taken_here = 0
+            # Count every row READ from this shard, not just the ones kept.
+            # Counting only kept rows let a shard whose districts were already
+            # full spin through thousands of rows while appearing to have taken
+            # nothing, consuming the whole budget before the walk reached the
+            # later shards.
+            read_here = 0
             for row in stream:
-                if taken_here >= per_shard or scanned >= budget:
+                if read_here >= per_shard or scanned >= budget:
                     break
+                read_here += 1
                 scanned += 1
 
                 district = (row.get("district") or "Unknown").strip()
@@ -233,7 +239,6 @@ def sample_language(
                 cid = clip_id(cfg.language, district, index)
                 if cid in seen:
                     per_district[district] += 1
-                    taken_here += 1
                     continue
 
                 wav_path = out_dir / "clips" / cfg.language / district / f"{cid}.wav"
@@ -259,7 +264,6 @@ def sample_language(
                 manifest.flush()
                 rows.append(record)
                 per_district[district] += 1
-                taken_here += 1
 
     thin = [d for d, n in per_district.items() if n < cfg.min_cell]
     if thin:

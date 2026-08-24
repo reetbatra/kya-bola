@@ -161,6 +161,11 @@ def build_provider(spec: str) -> Provider:
 
         _, _, model = spec.partition(":")
         return ElevenLabsProvider(model=model or DEFAULT_MODEL)
+    if spec.startswith("indicconformer"):
+        from harness.providers.indicconformer import IndicConformerProvider
+
+        _, _, decoding = spec.partition(":")
+        return IndicConformerProvider(decoding=decoding or "ctc")
     raise ValueError(f"unknown provider {spec!r}")
 
 
