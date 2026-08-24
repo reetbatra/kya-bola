@@ -1,0 +1,16 @@
+{
+ "provider": "sarvam:saaras:v3",
+ "clips": 350,
+ "scored": 316,
+ "districts": 90,
+ "per_reference_wer": {
+  "transcription_v1": 0.18425681618293754,
+  "transcription_v2": 0.18409633326101107,
+  "transcription_v3": 0.19406834300451323
+ },
+ "approach_1": 0.18747383081615396,
+ "approach_2": 0.1594600295296351,
+ "district_mean": 0.17584696295885135,
+ "district_std": 0.07716341633950934,
+ "inter_annotator_wer": 0.09388742304309587
+}

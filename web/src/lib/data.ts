@@ -2,7 +2,9 @@ import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import type { Results, ProviderRun } from "./types";
 
-const DATA = join(process.cwd(), "..", "data");
+// Vercel uploads only this directory, so the JSON the site reads is synced
+// into public/data by scripts/sync-data.mjs and committed. See that file.
+const DATA = join(process.cwd(), "public", "data");
 
 /** Results are precomputed by the Python harness. Nothing is scored at request
  *  time, so the site is a static read of a JSON file. */
