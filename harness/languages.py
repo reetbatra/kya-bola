@@ -131,8 +131,12 @@ UNSUPPORTED = [lang for lang in LANGUAGES.values() if not lang.supported]
 
 
 def config_name(name: str) -> str:
-    """HF config name for a language, e.g. "Hindi" -> "audio/Hindi"."""
-    return f"audio/{name}"
+    """HF builder-config name for a language.
+
+    The dataset card's `dataset_info` lists these as "audio/Hindi", but that is
+    the data path; the builder config is the bare language name.
+    """
+    return name
 
 
 def get(name: str) -> Language:

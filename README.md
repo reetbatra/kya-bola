@@ -1,4 +1,7 @@
-# indic-asr-atlas
+# kya bola?
+
+*"kya bola?" — what did you say? The thing you ask when you didn't catch it.
+Also, apparently, what most speech APIs are thinking outside the metros.*
 
 A district- and language-level benchmark of Indian speech recognition, built on
 the Vaani corpus from ARTPARK/IISc.
