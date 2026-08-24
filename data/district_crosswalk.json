@@ -1,0 +1,1814 @@
+{
+ "matched": [
+  {
+   "config": "AndhraPradesh_Anantpur",
+   "state": "AndhraPradesh",
+   "district": "Anantpur",
+   "shape_ids": [
+    "76128533B52664671961643"
+   ],
+   "matched_name": "Anantapur",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "AndhraPradesh_Chittoor",
+   "state": "AndhraPradesh",
+   "district": "Chittoor",
+   "shape_ids": [
+    "76128533B22471914548132"
+   ],
+   "matched_name": "Chittoor",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "AndhraPradesh_Guntur",
+   "state": "AndhraPradesh",
+   "district": "Guntur",
+   "shape_ids": [
+    "76128533B72541188260561"
+   ],
+   "matched_name": "Guntur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "AndhraPradesh_Krishna",
+   "state": "AndhraPradesh",
+   "district": "Krishna",
+   "shape_ids": [
+    "76128533B4481773749911"
+   ],
+   "matched_name": "Krishna",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "AndhraPradesh_Srikakulam",
+   "state": "AndhraPradesh",
+   "district": "Srikakulam",
+   "shape_ids": [
+    "76128533B59405966069108"
+   ],
+   "matched_name": "Srikakulam",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "AndhraPradesh_Vishakapattanam",
+   "state": "AndhraPradesh",
+   "district": "Vishakapattanam",
+   "shape_ids": [
+    "76128533B71485440235524"
+   ],
+   "matched_name": "Visakhapatnam",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "ArunachalPradesh_Longding",
+   "state": "ArunachalPradesh",
+   "district": "Longding",
+   "shape_ids": [
+    "76128533B22715430000002"
+   ],
+   "matched_name": "Longding",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "ArunachalPradesh_LowerDibangvalley",
+   "state": "ArunachalPradesh",
+   "district": "LowerDibangvalley",
+   "shape_ids": [
+    "76128533B38784530776316"
+   ],
+   "matched_name": "Lower Dibang Valley",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "ArunachalPradesh_PapumPare",
+   "state": "ArunachalPradesh",
+   "district": "PapumPare",
+   "shape_ids": [
+    "76128533B17472905712757"
+   ],
+   "matched_name": "Papum Pare",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Assam_Hailakandi",
+   "state": "Assam",
+   "district": "Hailakandi",
+   "shape_ids": [
+    "76128533B16749627383755"
+   ],
+   "matched_name": "Hailakandi",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Assam_KamrupMetropolitan",
+   "state": "Assam",
+   "district": "KamrupMetropolitan",
+   "shape_ids": [
+    "76128533B38230828972906"
+   ],
+   "matched_name": "Kamrup Metropolitan",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Assam_KarbiAnglong",
+   "state": "Assam",
+   "district": "KarbiAnglong",
+   "shape_ids": [
+    "76128533B38548995376745"
+   ],
+   "matched_name": "Karbi Anglong East",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Assam_Sonitpur",
+   "state": "Assam",
+   "district": "Sonitpur",
+   "shape_ids": [
+    "76128533B41005496708834"
+   ],
+   "matched_name": "Sonitpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Araria",
+   "state": "Bihar",
+   "district": "Araria",
+   "shape_ids": [
+    "76128533B4745348385341"
+   ],
+   "matched_name": "Araria",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Begusarai",
+   "state": "Bihar",
+   "district": "Begusarai",
+   "shape_ids": [
+    "76128533B5855800361016"
+   ],
+   "matched_name": "Begusarai",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Bhagalpur",
+   "state": "Bihar",
+   "district": "Bhagalpur",
+   "shape_ids": [
+    "76128533B83462627230182"
+   ],
+   "matched_name": "Bhagalpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Darbhanga",
+   "state": "Bihar",
+   "district": "Darbhanga",
+   "shape_ids": [
+    "76128533B12694285477701"
+   ],
+   "matched_name": "Darbhanga",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_EastChamparan",
+   "state": "Bihar",
+   "district": "EastChamparan",
+   "shape_ids": [
+    "76128533B49017555803526"
+   ],
+   "matched_name": "Purba Champaran",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Gaya",
+   "state": "Bihar",
+   "district": "Gaya",
+   "shape_ids": [
+    "76128533B91871300208785"
+   ],
+   "matched_name": "Gaya",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Gopalganj",
+   "state": "Bihar",
+   "district": "Gopalganj",
+   "shape_ids": [
+    "76128533B93214480696409"
+   ],
+   "matched_name": "Gopalganj",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Jahanabad",
+   "state": "Bihar",
+   "district": "Jahanabad",
+   "shape_ids": [
+    "76128533B24101991435637"
+   ],
+   "matched_name": "Jehanabad",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Jamui",
+   "state": "Bihar",
+   "district": "Jamui",
+   "shape_ids": [
+    "76128533B16781044866906"
+   ],
+   "matched_name": "Jamui",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Kaimur",
+   "state": "Bihar",
+   "district": "Kaimur",
+   "shape_ids": [
+    "76128533B78904410352326"
+   ],
+   "matched_name": "Kaimur (Bhabua)",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Katihar",
+   "state": "Bihar",
+   "district": "Katihar",
+   "shape_ids": [
+    "76128533B27432148084533"
+   ],
+   "matched_name": "Katihar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Kishanganj",
+   "state": "Bihar",
+   "district": "Kishanganj",
+   "shape_ids": [
+    "76128533B65773363805797"
+   ],
+   "matched_name": "Kishanganj",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Lakhisarai",
+   "state": "Bihar",
+   "district": "Lakhisarai",
+   "shape_ids": [
+    "76128533B98985252129882"
+   ],
+   "matched_name": "Lakhisarai",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Madhepura",
+   "state": "Bihar",
+   "district": "Madhepura",
+   "shape_ids": [
+    "76128533B29293163114565"
+   ],
+   "matched_name": "Madhepura",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Muzaffarpur",
+   "state": "Bihar",
+   "district": "Muzaffarpur",
+   "shape_ids": [
+    "76128533B88481188307630"
+   ],
+   "matched_name": "Muzaffarpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Patna",
+   "state": "Bihar",
+   "district": "Patna",
+   "shape_ids": [
+    "76128533B60721316645780"
+   ],
+   "matched_name": "Patna",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Purnia",
+   "state": "Bihar",
+   "district": "Purnia",
+   "shape_ids": [
+    "76128533B32499449492865"
+   ],
+   "matched_name": "Purnia",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Saharsa",
+   "state": "Bihar",
+   "district": "Saharsa",
+   "shape_ids": [
+    "76128533B24755983727265"
+   ],
+   "matched_name": "Saharsa",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Samastipur",
+   "state": "Bihar",
+   "district": "Samastipur",
+   "shape_ids": [
+    "76128533B66790149147330"
+   ],
+   "matched_name": "Samastipur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Saran",
+   "state": "Bihar",
+   "district": "Saran",
+   "shape_ids": [
+    "76128533B19903856317609"
+   ],
+   "matched_name": "Saran",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Sitamarhi",
+   "state": "Bihar",
+   "district": "Sitamarhi",
+   "shape_ids": [
+    "76128533B21922686388534"
+   ],
+   "matched_name": "Sitamarhi",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Supaul",
+   "state": "Bihar",
+   "district": "Supaul",
+   "shape_ids": [
+    "76128533B62794162648247"
+   ],
+   "matched_name": "Supaul",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_Vaishali",
+   "state": "Bihar",
+   "district": "Vaishali",
+   "shape_ids": [
+    "76128533B91445917652173"
+   ],
+   "matched_name": "Vaishali",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Bihar_WestChamparan",
+   "state": "Bihar",
+   "district": "WestChamparan",
+   "shape_ids": [
+    "76128533B17762399278073"
+   ],
+   "matched_name": "Pashchim Champaran",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Chandigarh_Chandigarh",
+   "state": "Chandigarh",
+   "district": "Chandigarh",
+   "shape_ids": [
+    "76128533B56050914259601"
+   ],
+   "matched_name": "Chandigarh",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Balrampur",
+   "state": "Chhattisgarh",
+   "district": "Balrampur",
+   "shape_ids": [
+    "76128533B14598081584747"
+   ],
+   "matched_name": "Balrampur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Bastar",
+   "state": "Chhattisgarh",
+   "district": "Bastar",
+   "shape_ids": [
+    "76128533B47840093719460"
+   ],
+   "matched_name": "Bastar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Bilaspur",
+   "state": "Chhattisgarh",
+   "district": "Bilaspur",
+   "shape_ids": [
+    "76128533B81964529079574"
+   ],
+   "matched_name": "Bilaspur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Jashpur",
+   "state": "Chhattisgarh",
+   "district": "Jashpur",
+   "shape_ids": [
+    "76128533B53609934827566"
+   ],
+   "matched_name": "Jashpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Kabirdham",
+   "state": "Chhattisgarh",
+   "district": "Kabirdham",
+   "shape_ids": [
+    "76128533B48077510234542"
+   ],
+   "matched_name": "Kabeerdham",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Korba",
+   "state": "Chhattisgarh",
+   "district": "Korba",
+   "shape_ids": [
+    "76128533B89438858641946"
+   ],
+   "matched_name": "Korba",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Koriya",
+   "state": "Chhattisgarh",
+   "district": "Koriya",
+   "shape_ids": [
+    "76128533B1621599562140"
+   ],
+   "matched_name": "Koriya",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Narayanpur",
+   "state": "Chhattisgarh",
+   "district": "Narayanpur",
+   "shape_ids": [
+    "76128533B89979485471283"
+   ],
+   "matched_name": "Narayanpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Raigarh",
+   "state": "Chhattisgarh",
+   "district": "Raigarh",
+   "shape_ids": [
+    "76128533B67018657649043"
+   ],
+   "matched_name": "Raigarh",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Raipur",
+   "state": "Chhattisgarh",
+   "district": "Raipur",
+   "shape_ids": [
+    "76128533B57691508962219"
+   ],
+   "matched_name": "Raipur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Rajnandgaon",
+   "state": "Chhattisgarh",
+   "district": "Rajnandgaon",
+   "shape_ids": [
+    "76128533B25020556592153"
+   ],
+   "matched_name": "Rajnandgaon",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Sarguja",
+   "state": "Chhattisgarh",
+   "district": "Sarguja",
+   "shape_ids": [
+    "76128533B52487813780503"
+   ],
+   "matched_name": "Surguja",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Chhattisgarh_Sukma",
+   "state": "Chhattisgarh",
+   "district": "Sukma",
+   "shape_ids": [
+    "76128533B53316015271969"
+   ],
+   "matched_name": "Sukma",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Delhi_NewDelhi",
+   "state": "Delhi",
+   "district": "NewDelhi",
+   "shape_ids": [
+    "76128533B58262202014972"
+   ],
+   "matched_name": "New Delhi",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Goa_NorthSouthGoa",
+   "state": "Goa",
+   "district": "NorthSouthGoa",
+   "shape_ids": [
+    "76128533B1711704044407",
+    "76128533B63117839967753"
+   ],
+   "method": "composite",
+   "score": 1.0
+  },
+  {
+   "config": "Gujarat_DevbhoomiDwarka",
+   "state": "Gujarat",
+   "district": "DevbhoomiDwarka",
+   "shape_ids": [
+    "76128533B74381554567803"
+   ],
+   "matched_name": "Devbhumi Dwarka",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Gujarat_Gandhinagar",
+   "state": "Gujarat",
+   "district": "Gandhinagar",
+   "shape_ids": [
+    "76128533B7606365706860"
+   ],
+   "matched_name": "Gandhinagar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Gujarat_Navsari",
+   "state": "Gujarat",
+   "district": "Navsari",
+   "shape_ids": [
+    "76128533B6397758882978"
+   ],
+   "matched_name": "Navsari",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Gujarat_Valsad",
+   "state": "Gujarat",
+   "district": "Valsad",
+   "shape_ids": [
+    "76128533B60261306484775"
+   ],
+   "matched_name": "Valsad",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Haryana_Jhajjar",
+   "state": "Haryana",
+   "district": "Jhajjar",
+   "shape_ids": [
+    "76128533B70554191137208"
+   ],
+   "matched_name": "Jhajjar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Haryana_Rohtak",
+   "state": "Haryana",
+   "district": "Rohtak",
+   "shape_ids": [
+    "76128533B12244045944458"
+   ],
+   "matched_name": "Rohtak",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "HimachalPradesh_Shimla",
+   "state": "HimachalPradesh",
+   "district": "Shimla",
+   "shape_ids": [
+    "76128533B77537928419507"
+   ],
+   "matched_name": "Shimla",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "JammuAndKashmir_Srinagar",
+   "state": "JammuAndKashmir",
+   "district": "Srinagar",
+   "shape_ids": [
+    "76128533B32249045995424"
+   ],
+   "matched_name": "Srinagar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Jharkhand_Deoghar",
+   "state": "Jharkhand",
+   "district": "Deoghar",
+   "shape_ids": [
+    "76128533B90068096507942"
+   ],
+   "matched_name": "Deoghar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Jharkhand_Garhwa",
+   "state": "Jharkhand",
+   "district": "Garhwa",
+   "shape_ids": [
+    "76128533B12294379827032"
+   ],
+   "matched_name": "Garhwa",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Jharkhand_Jamtara",
+   "state": "Jharkhand",
+   "district": "Jamtara",
+   "shape_ids": [
+    "76128533B17261532861377"
+   ],
+   "matched_name": "Jamtara",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Jharkhand_Palamu",
+   "state": "Jharkhand",
+   "district": "Palamu",
+   "shape_ids": [
+    "76128533B6050540865870"
+   ],
+   "matched_name": "Palamu",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Jharkhand_Ranchi",
+   "state": "Jharkhand",
+   "district": "Ranchi",
+   "shape_ids": [
+    "76128533B71439508543442"
+   ],
+   "matched_name": "Ranchi",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Jharkhand_Sahebganj",
+   "state": "Jharkhand",
+   "district": "Sahebganj",
+   "shape_ids": [
+    "76128533B49805675626253"
+   ],
+   "matched_name": "Sahibganj",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Bangalore",
+   "state": "Karnataka",
+   "district": "Bangalore",
+   "shape_ids": [
+    "76128533B76927648517269"
+   ],
+   "matched_name": "Bangalore",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Belgaum",
+   "state": "Karnataka",
+   "district": "Belgaum",
+   "shape_ids": [
+    "76128533B74319098136622"
+   ],
+   "matched_name": "Belgaum",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Bellary",
+   "state": "Karnataka",
+   "district": "Bellary",
+   "shape_ids": [
+    "76128533B92621859299479"
+   ],
+   "matched_name": "Bellary",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Bidar",
+   "state": "Karnataka",
+   "district": "Bidar",
+   "shape_ids": [
+    "76128533B9794868259401"
+   ],
+   "matched_name": "Bidar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Bijapur",
+   "state": "Karnataka",
+   "district": "Bijapur",
+   "shape_ids": [
+    "76128533B40495457052818"
+   ],
+   "matched_name": "Bijapur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Chamarajanagar",
+   "state": "Karnataka",
+   "district": "Chamarajanagar",
+   "shape_ids": [
+    "76128533B16628456658675"
+   ],
+   "matched_name": "Chamarajanagar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_DakshinaKannada",
+   "state": "Karnataka",
+   "district": "DakshinaKannada",
+   "shape_ids": [
+    "76128533B54396396829952"
+   ],
+   "matched_name": "Dakshina Kannada",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Dharwad",
+   "state": "Karnataka",
+   "district": "Dharwad",
+   "shape_ids": [
+    "76128533B75110579117636"
+   ],
+   "matched_name": "Dharwad",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Gulbarga",
+   "state": "Karnataka",
+   "district": "Gulbarga",
+   "shape_ids": [
+    "76128533B1083016608278"
+   ],
+   "matched_name": "Gulbarga",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Koppal",
+   "state": "Karnataka",
+   "district": "Koppal",
+   "shape_ids": [
+    "76128533B79601545186231"
+   ],
+   "matched_name": "Koppal",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Mysore",
+   "state": "Karnataka",
+   "district": "Mysore",
+   "shape_ids": [
+    "76128533B95879808095476"
+   ],
+   "matched_name": "Mysore",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Raichur",
+   "state": "Karnataka",
+   "district": "Raichur",
+   "shape_ids": [
+    "76128533B284680734793"
+   ],
+   "matched_name": "Raichur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Karnataka_Shimoga",
+   "state": "Karnataka",
+   "district": "Shimoga",
+   "shape_ids": [
+    "76128533B85389886560116"
+   ],
+   "matched_name": "Shimoga",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Kerala_Kasaragod",
+   "state": "Kerala",
+   "district": "Kasaragod",
+   "shape_ids": [
+    "76128533B63366045987285"
+   ],
+   "matched_name": "Kasaragod",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Kerala_Kollam",
+   "state": "Kerala",
+   "district": "Kollam",
+   "shape_ids": [
+    "76128533B61117593923933"
+   ],
+   "matched_name": "Kollam",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Kerala_Kozhikode",
+   "state": "Kerala",
+   "district": "Kozhikode",
+   "shape_ids": [
+    "76128533B3985531353014"
+   ],
+   "matched_name": "Kozhikode",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Kerala_Thiruvananthapuram",
+   "state": "Kerala",
+   "district": "Thiruvananthapuram",
+   "shape_ids": [
+    "76128533B33162455176756"
+   ],
+   "matched_name": "Thiruvananthapuram",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Kerala_Wayanad",
+   "state": "Kerala",
+   "district": "Wayanad",
+   "shape_ids": [
+    "76128533B82539771173603"
+   ],
+   "matched_name": "Wayanad",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "MadhyaPradesh_Bhopal",
+   "state": "MadhyaPradesh",
+   "district": "Bhopal",
+   "shape_ids": [
+    "76128533B22439249004073"
+   ],
+   "matched_name": "Bhopal",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "MadhyaPradesh_Dhar",
+   "state": "MadhyaPradesh",
+   "district": "Dhar",
+   "shape_ids": [
+    "76128533B42880544505675"
+   ],
+   "matched_name": "Dhar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "MadhyaPradesh_Katni",
+   "state": "MadhyaPradesh",
+   "district": "Katni",
+   "shape_ids": [
+    "76128533B16674973717653"
+   ],
+   "matched_name": "Katni",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "MadhyaPradesh_Umaria",
+   "state": "MadhyaPradesh",
+   "district": "Umaria",
+   "shape_ids": [
+    "76128533B4466876522971"
+   ],
+   "matched_name": "Umaria",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Maharashtra_Aurangabad",
+   "state": "Maharashtra",
+   "district": "Aurangabad",
+   "shape_ids": [
+    "76128533B39329594544563"
+   ],
+   "matched_name": "Aurangabad",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Maharashtra_Chandrapur",
+   "state": "Maharashtra",
+   "district": "Chandrapur",
+   "shape_ids": [
+    "76128533B31342633028465"
+   ],
+   "matched_name": "Chandrapur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Maharashtra_Dhule",
+   "state": "Maharashtra",
+   "district": "Dhule",
+   "shape_ids": [
+    "76128533B25344721013980"
+   ],
+   "matched_name": "Dhule",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Maharashtra_Gondia",
+   "state": "Maharashtra",
+   "district": "Gondia",
+   "shape_ids": [
+    "76128533B76286653784168"
+   ],
+   "matched_name": "Gondiya",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Maharashtra_Mumbaisuburban",
+   "state": "Maharashtra",
+   "district": "Mumbaisuburban",
+   "shape_ids": [
+    "76128533B67326016655833"
+   ],
+   "matched_name": "Mumbai Suburban",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Maharashtra_Nagpur",
+   "state": "Maharashtra",
+   "district": "Nagpur",
+   "shape_ids": [
+    "76128533B3026318797185"
+   ],
+   "matched_name": "Nagpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Maharashtra_Pune",
+   "state": "Maharashtra",
+   "district": "Pune",
+   "shape_ids": [
+    "76128533B71380851181380"
+   ],
+   "matched_name": "Pune",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Maharashtra_Sindhudurg",
+   "state": "Maharashtra",
+   "district": "Sindhudurg",
+   "shape_ids": [
+    "76128533B39238815774480"
+   ],
+   "matched_name": "Sindhudurg",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Maharashtra_Solapur",
+   "state": "Maharashtra",
+   "district": "Solapur",
+   "shape_ids": [
+    "76128533B62490300334729"
+   ],
+   "matched_name": "Solapur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Maharashtra_Washim",
+   "state": "Maharashtra",
+   "district": "Washim",
+   "shape_ids": [
+    "76128533B59866172845044"
+   ],
+   "matched_name": "Washim",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Manipur_ImphalWest",
+   "state": "Manipur",
+   "district": "ImphalWest",
+   "shape_ids": [
+    "76128533B99807650893733"
+   ],
+   "matched_name": "Imphal West",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Meghalaya_NorthGaroHills",
+   "state": "Meghalaya",
+   "district": "NorthGaroHills",
+   "shape_ids": [
+    "76128533B35759455556328"
+   ],
+   "matched_name": "North Garo Hills",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Meghalaya_SouthGarohills",
+   "state": "Meghalaya",
+   "district": "SouthGarohills",
+   "shape_ids": [
+    "76128533B79750857313751"
+   ],
+   "matched_name": "South Garo Hills",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Meghalaya_WestGaroHills",
+   "state": "Meghalaya",
+   "district": "WestGaroHills",
+   "shape_ids": [
+    "76128533B96195300293897"
+   ],
+   "matched_name": "West Garo Hills",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Mizoram_Aizawl",
+   "state": "Mizoram",
+   "district": "Aizawl",
+   "shape_ids": [
+    "76128533B34203923268864"
+   ],
+   "matched_name": "Aizawl",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Nagaland_Dimapur",
+   "state": "Nagaland",
+   "district": "Dimapur",
+   "shape_ids": [
+    "76128533B85747247216737"
+   ],
+   "matched_name": "Dimapur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Nagaland_Kohima",
+   "state": "Nagaland",
+   "district": "Kohima",
+   "shape_ids": [
+    "76128533B53671786151110"
+   ],
+   "matched_name": "Kohima",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Odisha_Khordha",
+   "state": "Odisha",
+   "district": "Khordha",
+   "shape_ids": [
+    "76128533B52802748445403"
+   ],
+   "matched_name": "Khordha",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Odisha_Malkangiri",
+   "state": "Odisha",
+   "district": "Malkangiri",
+   "shape_ids": [
+    "76128533B85917349021677"
+   ],
+   "matched_name": "Malkangiri",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Odisha_Nuapada",
+   "state": "Odisha",
+   "district": "Nuapada",
+   "shape_ids": [
+    "76128533B33451850475260"
+   ],
+   "matched_name": "Nuapada",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Odisha_Sambalpur",
+   "state": "Odisha",
+   "district": "Sambalpur",
+   "shape_ids": [
+    "76128533B84129562351919"
+   ],
+   "matched_name": "Sambalpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Punjab_Fazilka",
+   "state": "Punjab",
+   "district": "Fazilka",
+   "shape_ids": [
+    "76128533B7291413308870"
+   ],
+   "matched_name": "Fazilka",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Punjab_Kapurthala",
+   "state": "Punjab",
+   "district": "Kapurthala",
+   "shape_ids": [
+    "76128533B37199077904074"
+   ],
+   "matched_name": "Kapurthala",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Punjab_Pathankot",
+   "state": "Punjab",
+   "district": "Pathankot",
+   "shape_ids": [
+    "76128533B19630094725383"
+   ],
+   "matched_name": "Pathankot",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Rajasthan_Barmer",
+   "state": "Rajasthan",
+   "district": "Barmer",
+   "shape_ids": [
+    "76128533B75922461866405"
+   ],
+   "matched_name": "Barmer",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Rajasthan_Bikaner",
+   "state": "Rajasthan",
+   "district": "Bikaner",
+   "shape_ids": [
+    "76128533B55039756001726"
+   ],
+   "matched_name": "Bikaner",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Rajasthan_Churu",
+   "state": "Rajasthan",
+   "district": "Churu",
+   "shape_ids": [
+    "76128533B66825707357376"
+   ],
+   "matched_name": "Churu",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Rajasthan_Jaipur",
+   "state": "Rajasthan",
+   "district": "Jaipur",
+   "shape_ids": [
+    "76128533B28755611410447"
+   ],
+   "matched_name": "Jaipur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Rajasthan_Jaisalmer",
+   "state": "Rajasthan",
+   "district": "Jaisalmer",
+   "shape_ids": [
+    "76128533B14849085202492"
+   ],
+   "matched_name": "Jaisalmer",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Rajasthan_Nagaur",
+   "state": "Rajasthan",
+   "district": "Nagaur",
+   "shape_ids": [
+    "76128533B43544960343942"
+   ],
+   "matched_name": "Nagaur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Sikkim_Gangtok",
+   "state": "Sikkim",
+   "district": "Gangtok",
+   "shape_ids": [
+    "76128533B67639510673366"
+   ],
+   "matched_name": "East District",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "TamilNadu_Chennai",
+   "state": "TamilNadu",
+   "district": "Chennai",
+   "shape_ids": [
+    "76128533B89024397489955"
+   ],
+   "matched_name": "Chennai",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "TamilNadu_Kanyakumari",
+   "state": "TamilNadu",
+   "district": "Kanyakumari",
+   "shape_ids": [
+    "76128533B53796141759805"
+   ],
+   "matched_name": "Kanniyakumari",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "TamilNadu_Namakkal",
+   "state": "TamilNadu",
+   "district": "Namakkal",
+   "shape_ids": [
+    "76128533B51372664315362"
+   ],
+   "matched_name": "Namakkal",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "TamilNadu_Nilgiris",
+   "state": "TamilNadu",
+   "district": "Nilgiris",
+   "shape_ids": [
+    "76128533B21812274124310"
+   ],
+   "matched_name": "The Nilgiris",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Telangana_Adilabad",
+   "state": "Telangana",
+   "district": "Adilabad",
+   "shape_ids": [
+    "76128533B38354309367879"
+   ],
+   "matched_name": "Adilabad",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Telangana_Hyderabad",
+   "state": "Telangana",
+   "district": "Hyderabad",
+   "shape_ids": [
+    "76128533B84676164211579"
+   ],
+   "matched_name": "Hydrabad",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Telangana_Karimnagar",
+   "state": "Telangana",
+   "district": "Karimnagar",
+   "shape_ids": [
+    "76128533B58104976570569"
+   ],
+   "matched_name": "Karimnagar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Telangana_KomaramBheem",
+   "state": "Telangana",
+   "district": "KomaramBheem",
+   "shape_ids": [
+    "76128533B33226396095315"
+   ],
+   "matched_name": "Komaram Bheem",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Telangana_Mahabubabad",
+   "state": "Telangana",
+   "district": "Mahabubabad",
+   "shape_ids": [
+    "76128533B28290181894983"
+   ],
+   "matched_name": "Mahabubabad",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Telangana_Nalgonda",
+   "state": "Telangana",
+   "district": "Nalgonda",
+   "shape_ids": [
+    "76128533B8892495882090"
+   ],
+   "matched_name": "Nalgonda",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Tripura_Dhalai",
+   "state": "Tripura",
+   "district": "Dhalai",
+   "shape_ids": [
+    "76128533B42970684683247"
+   ],
+   "matched_name": "Dhalai",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Tripura_SouthTripura",
+   "state": "Tripura",
+   "district": "SouthTripura",
+   "shape_ids": [
+    "76128533B67748245133340"
+   ],
+   "matched_name": "South Tripura",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Tripura_Unakoti",
+   "state": "Tripura",
+   "district": "Unakoti",
+   "shape_ids": [
+    "76128533B4720703924950"
+   ],
+   "matched_name": "Unokoti",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "Tripura_WestTripura",
+   "state": "Tripura",
+   "district": "WestTripura",
+   "shape_ids": [
+    "76128533B97225684979956"
+   ],
+   "matched_name": "West Tripura",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Budaun",
+   "state": "UttarPradesh",
+   "district": "Budaun",
+   "shape_ids": [
+    "76128533B84679668760735"
+   ],
+   "matched_name": "Budaun",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Deoria",
+   "state": "UttarPradesh",
+   "district": "Deoria",
+   "shape_ids": [
+    "76128533B40023971667984"
+   ],
+   "matched_name": "Deoria",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Etah",
+   "state": "UttarPradesh",
+   "district": "Etah",
+   "shape_ids": [
+    "76128533B15342706434354"
+   ],
+   "matched_name": "Etah",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Ghazipur",
+   "state": "UttarPradesh",
+   "district": "Ghazipur",
+   "shape_ids": [
+    "76128533B49460554954204"
+   ],
+   "matched_name": "Ghazipur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Gorakhpur",
+   "state": "UttarPradesh",
+   "district": "Gorakhpur",
+   "shape_ids": [
+    "76128533B40226077866964"
+   ],
+   "matched_name": "Gorakhpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Hamirpur",
+   "state": "UttarPradesh",
+   "district": "Hamirpur",
+   "shape_ids": [
+    "76128533B27201270098470"
+   ],
+   "matched_name": "Hamirpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Jalaun",
+   "state": "UttarPradesh",
+   "district": "Jalaun",
+   "shape_ids": [
+    "76128533B15835290978888"
+   ],
+   "matched_name": "Jalaun",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_JyotibaPhuleNagar",
+   "state": "UttarPradesh",
+   "district": "JyotibaPhuleNagar",
+   "shape_ids": [
+    "76128533B21119051307760"
+   ],
+   "matched_name": "Jyotiba Phule Nagar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Lalitpur",
+   "state": "UttarPradesh",
+   "district": "Lalitpur",
+   "shape_ids": [
+    "76128533B59256192226816"
+   ],
+   "matched_name": "Lalitpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Lucknow",
+   "state": "UttarPradesh",
+   "district": "Lucknow",
+   "shape_ids": [
+    "76128533B49436035281620"
+   ],
+   "matched_name": "Lucknow",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Muzaffarnagar",
+   "state": "UttarPradesh",
+   "district": "Muzaffarnagar",
+   "shape_ids": [
+    "76128533B87051210355251"
+   ],
+   "matched_name": "Muzaffarnagar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Saharanpur",
+   "state": "UttarPradesh",
+   "district": "Saharanpur",
+   "shape_ids": [
+    "76128533B33437990510331"
+   ],
+   "matched_name": "Saharanpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Shamli",
+   "state": "UttarPradesh",
+   "district": "Shamli",
+   "shape_ids": [
+    "76128533B35465481868600"
+   ],
+   "matched_name": "Samli",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "UttarPradesh_Varanasi",
+   "state": "UttarPradesh",
+   "district": "Varanasi",
+   "shape_ids": [
+    "76128533B7622369120497"
+   ],
+   "matched_name": "Varanasi",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Uttarakhand_TehriGarhwal",
+   "state": "Uttarakhand",
+   "district": "TehriGarhwal",
+   "shape_ids": [
+    "76128533B61134942989820"
+   ],
+   "matched_name": "Tehri Garhwal",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "Uttarakhand_Uttarkashi",
+   "state": "Uttarakhand",
+   "district": "Uttarkashi",
+   "shape_ids": [
+    "76128533B81694682724865"
+   ],
+   "matched_name": "Uttarkashi",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_Alipurduar",
+   "state": "WestBengal",
+   "district": "Alipurduar",
+   "shape_ids": [
+    "76128533B23858286755005"
+   ],
+   "matched_name": "Alipurduar",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_CoochBehar",
+   "state": "WestBengal",
+   "district": "CoochBehar",
+   "shape_ids": [
+    "76128533B64156747739715"
+   ],
+   "matched_name": "Koch Bihar",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_DakshinDinajpur",
+   "state": "WestBengal",
+   "district": "DakshinDinajpur",
+   "shape_ids": [
+    "76128533B43049220506604"
+   ],
+   "matched_name": "Dakshin Dinajpur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_Darjeeling",
+   "state": "WestBengal",
+   "district": "Darjeeling",
+   "shape_ids": [
+    "76128533B17109302371020"
+   ],
+   "matched_name": "Darjiling",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_Jalpaiguri",
+   "state": "WestBengal",
+   "district": "Jalpaiguri",
+   "shape_ids": [
+    "76128533B99051523080987"
+   ],
+   "matched_name": "Jalpaiguri",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_Jhargram",
+   "state": "WestBengal",
+   "district": "Jhargram",
+   "shape_ids": [
+    "76128533B24861976740713"
+   ],
+   "matched_name": "Jhargram",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_Kolkata",
+   "state": "WestBengal",
+   "district": "Kolkata",
+   "shape_ids": [
+    "76128533B72507508533064"
+   ],
+   "matched_name": "Kolkata",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_Malda",
+   "state": "WestBengal",
+   "district": "Malda",
+   "shape_ids": [
+    "76128533B36734405131975"
+   ],
+   "matched_name": "Maldah",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_North24Parganas",
+   "state": "WestBengal",
+   "district": "North24Parganas",
+   "shape_ids": [
+    "76128533B93453964263910"
+   ],
+   "matched_name": "North Twenty Four Parganas",
+   "method": "manual",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_PaschimMedinipur",
+   "state": "WestBengal",
+   "district": "PaschimMedinipur",
+   "shape_ids": [
+    "76128533B88812350838807"
+   ],
+   "matched_name": "Paschim Medinipur",
+   "method": "exact",
+   "score": 1.0
+  },
+  {
+   "config": "WestBengal_Purulia",
+   "state": "WestBengal",
+   "district": "Purulia",
+   "shape_ids": [
+    "76128533B16811573188243"
+   ],
+   "matched_name": "Puruliya",
+   "method": "manual",
+   "score": 1.0
+  }
+ ],
+ "review": [],
+ "unmatched": [
+  {
+   "config": "AndhraPradesh_Annamaya",
+   "state": "AndhraPradesh",
+   "district": "Annamaya",
+   "shape_ids": [],
+   "method": "absent",
+   "score": 0.0,
+   "reason": "created 2022 from Kadapa/Chittoor/Nellore; postdates the boundary file"
+  },
+  {
+   "config": "AndhraPradesh_Manyam",
+   "state": "AndhraPradesh",
+   "district": "Manyam",
+   "shape_ids": [],
+   "method": "absent",
+   "score": 0.0,
+   "reason": "Parvathipuram Manyam, created 2022 from Vizianagaram/Srikakulam"
+  },
+  {
+   "config": "AndhraPradesh_SriSatyaSai",
+   "state": "AndhraPradesh",
+   "district": "SriSatyaSai",
+   "shape_ids": [],
+   "method": "absent",
+   "score": 0.0,
+   "reason": "Sri Sathya Sai, created 2022 from Anantapur"
+  },
+  {
+   "config": "Haryana_CharkhiDadri",
+   "state": "Haryana",
+   "district": "CharkhiDadri",
+   "shape_ids": [],
+   "method": "absent",
+   "score": 0.0,
+   "reason": "created 2016 from Bhiwani; absent from the 2021 ADM2 release"
+  }
+ ]
+}

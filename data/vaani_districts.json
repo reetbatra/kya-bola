@@ -1,0 +1,827 @@
+[
+ {
+  "config": "AndhraPradesh_Anantpur",
+  "state": "AndhraPradesh",
+  "district": "Anantpur"
+ },
+ {
+  "config": "AndhraPradesh_Annamaya",
+  "state": "AndhraPradesh",
+  "district": "Annamaya"
+ },
+ {
+  "config": "AndhraPradesh_Chittoor",
+  "state": "AndhraPradesh",
+  "district": "Chittoor"
+ },
+ {
+  "config": "AndhraPradesh_Guntur",
+  "state": "AndhraPradesh",
+  "district": "Guntur"
+ },
+ {
+  "config": "AndhraPradesh_Krishna",
+  "state": "AndhraPradesh",
+  "district": "Krishna"
+ },
+ {
+  "config": "AndhraPradesh_Manyam",
+  "state": "AndhraPradesh",
+  "district": "Manyam"
+ },
+ {
+  "config": "AndhraPradesh_SriSatyaSai",
+  "state": "AndhraPradesh",
+  "district": "SriSatyaSai"
+ },
+ {
+  "config": "AndhraPradesh_Srikakulam",
+  "state": "AndhraPradesh",
+  "district": "Srikakulam"
+ },
+ {
+  "config": "AndhraPradesh_Vishakapattanam",
+  "state": "AndhraPradesh",
+  "district": "Vishakapattanam"
+ },
+ {
+  "config": "ArunachalPradesh_Longding",
+  "state": "ArunachalPradesh",
+  "district": "Longding"
+ },
+ {
+  "config": "ArunachalPradesh_LowerDibangvalley",
+  "state": "ArunachalPradesh",
+  "district": "LowerDibangvalley"
+ },
+ {
+  "config": "ArunachalPradesh_PapumPare",
+  "state": "ArunachalPradesh",
+  "district": "PapumPare"
+ },
+ {
+  "config": "Assam_Hailakandi",
+  "state": "Assam",
+  "district": "Hailakandi"
+ },
+ {
+  "config": "Assam_KamrupMetropolitan",
+  "state": "Assam",
+  "district": "KamrupMetropolitan"
+ },
+ {
+  "config": "Assam_KarbiAnglong",
+  "state": "Assam",
+  "district": "KarbiAnglong"
+ },
+ {
+  "config": "Assam_Sonitpur",
+  "state": "Assam",
+  "district": "Sonitpur"
+ },
+ {
+  "config": "Bihar_Araria",
+  "state": "Bihar",
+  "district": "Araria"
+ },
+ {
+  "config": "Bihar_Begusarai",
+  "state": "Bihar",
+  "district": "Begusarai"
+ },
+ {
+  "config": "Bihar_Bhagalpur",
+  "state": "Bihar",
+  "district": "Bhagalpur"
+ },
+ {
+  "config": "Bihar_Darbhanga",
+  "state": "Bihar",
+  "district": "Darbhanga"
+ },
+ {
+  "config": "Bihar_EastChamparan",
+  "state": "Bihar",
+  "district": "EastChamparan"
+ },
+ {
+  "config": "Bihar_Gaya",
+  "state": "Bihar",
+  "district": "Gaya"
+ },
+ {
+  "config": "Bihar_Gopalganj",
+  "state": "Bihar",
+  "district": "Gopalganj"
+ },
+ {
+  "config": "Bihar_Jahanabad",
+  "state": "Bihar",
+  "district": "Jahanabad"
+ },
+ {
+  "config": "Bihar_Jamui",
+  "state": "Bihar",
+  "district": "Jamui"
+ },
+ {
+  "config": "Bihar_Kaimur",
+  "state": "Bihar",
+  "district": "Kaimur"
+ },
+ {
+  "config": "Bihar_Katihar",
+  "state": "Bihar",
+  "district": "Katihar"
+ },
+ {
+  "config": "Bihar_Kishanganj",
+  "state": "Bihar",
+  "district": "Kishanganj"
+ },
+ {
+  "config": "Bihar_Lakhisarai",
+  "state": "Bihar",
+  "district": "Lakhisarai"
+ },
+ {
+  "config": "Bihar_Madhepura",
+  "state": "Bihar",
+  "district": "Madhepura"
+ },
+ {
+  "config": "Bihar_Muzaffarpur",
+  "state": "Bihar",
+  "district": "Muzaffarpur"
+ },
+ {
+  "config": "Bihar_Patna",
+  "state": "Bihar",
+  "district": "Patna"
+ },
+ {
+  "config": "Bihar_Purnia",
+  "state": "Bihar",
+  "district": "Purnia"
+ },
+ {
+  "config": "Bihar_Saharsa",
+  "state": "Bihar",
+  "district": "Saharsa"
+ },
+ {
+  "config": "Bihar_Samastipur",
+  "state": "Bihar",
+  "district": "Samastipur"
+ },
+ {
+  "config": "Bihar_Saran",
+  "state": "Bihar",
+  "district": "Saran"
+ },
+ {
+  "config": "Bihar_Sitamarhi",
+  "state": "Bihar",
+  "district": "Sitamarhi"
+ },
+ {
+  "config": "Bihar_Supaul",
+  "state": "Bihar",
+  "district": "Supaul"
+ },
+ {
+  "config": "Bihar_Vaishali",
+  "state": "Bihar",
+  "district": "Vaishali"
+ },
+ {
+  "config": "Bihar_WestChamparan",
+  "state": "Bihar",
+  "district": "WestChamparan"
+ },
+ {
+  "config": "Chandigarh_Chandigarh",
+  "state": "Chandigarh",
+  "district": "Chandigarh"
+ },
+ {
+  "config": "Chhattisgarh_Balrampur",
+  "state": "Chhattisgarh",
+  "district": "Balrampur"
+ },
+ {
+  "config": "Chhattisgarh_Bastar",
+  "state": "Chhattisgarh",
+  "district": "Bastar"
+ },
+ {
+  "config": "Chhattisgarh_Bilaspur",
+  "state": "Chhattisgarh",
+  "district": "Bilaspur"
+ },
+ {
+  "config": "Chhattisgarh_Jashpur",
+  "state": "Chhattisgarh",
+  "district": "Jashpur"
+ },
+ {
+  "config": "Chhattisgarh_Kabirdham",
+  "state": "Chhattisgarh",
+  "district": "Kabirdham"
+ },
+ {
+  "config": "Chhattisgarh_Korba",
+  "state": "Chhattisgarh",
+  "district": "Korba"
+ },
+ {
+  "config": "Chhattisgarh_Koriya",
+  "state": "Chhattisgarh",
+  "district": "Koriya"
+ },
+ {
+  "config": "Chhattisgarh_Narayanpur",
+  "state": "Chhattisgarh",
+  "district": "Narayanpur"
+ },
+ {
+  "config": "Chhattisgarh_Raigarh",
+  "state": "Chhattisgarh",
+  "district": "Raigarh"
+ },
+ {
+  "config": "Chhattisgarh_Raipur",
+  "state": "Chhattisgarh",
+  "district": "Raipur"
+ },
+ {
+  "config": "Chhattisgarh_Rajnandgaon",
+  "state": "Chhattisgarh",
+  "district": "Rajnandgaon"
+ },
+ {
+  "config": "Chhattisgarh_Sarguja",
+  "state": "Chhattisgarh",
+  "district": "Sarguja"
+ },
+ {
+  "config": "Chhattisgarh_Sukma",
+  "state": "Chhattisgarh",
+  "district": "Sukma"
+ },
+ {
+  "config": "Delhi_NewDelhi",
+  "state": "Delhi",
+  "district": "NewDelhi"
+ },
+ {
+  "config": "Goa_NorthSouthGoa",
+  "state": "Goa",
+  "district": "NorthSouthGoa"
+ },
+ {
+  "config": "Gujarat_DevbhoomiDwarka",
+  "state": "Gujarat",
+  "district": "DevbhoomiDwarka"
+ },
+ {
+  "config": "Gujarat_Gandhinagar",
+  "state": "Gujarat",
+  "district": "Gandhinagar"
+ },
+ {
+  "config": "Gujarat_Navsari",
+  "state": "Gujarat",
+  "district": "Navsari"
+ },
+ {
+  "config": "Gujarat_Valsad",
+  "state": "Gujarat",
+  "district": "Valsad"
+ },
+ {
+  "config": "Haryana_CharkhiDadri",
+  "state": "Haryana",
+  "district": "CharkhiDadri"
+ },
+ {
+  "config": "Haryana_Jhajjar",
+  "state": "Haryana",
+  "district": "Jhajjar"
+ },
+ {
+  "config": "Haryana_Rohtak",
+  "state": "Haryana",
+  "district": "Rohtak"
+ },
+ {
+  "config": "HimachalPradesh_Shimla",
+  "state": "HimachalPradesh",
+  "district": "Shimla"
+ },
+ {
+  "config": "JammuAndKashmir_Srinagar",
+  "state": "JammuAndKashmir",
+  "district": "Srinagar"
+ },
+ {
+  "config": "Jharkhand_Deoghar",
+  "state": "Jharkhand",
+  "district": "Deoghar"
+ },
+ {
+  "config": "Jharkhand_Garhwa",
+  "state": "Jharkhand",
+  "district": "Garhwa"
+ },
+ {
+  "config": "Jharkhand_Jamtara",
+  "state": "Jharkhand",
+  "district": "Jamtara"
+ },
+ {
+  "config": "Jharkhand_Palamu",
+  "state": "Jharkhand",
+  "district": "Palamu"
+ },
+ {
+  "config": "Jharkhand_Ranchi",
+  "state": "Jharkhand",
+  "district": "Ranchi"
+ },
+ {
+  "config": "Jharkhand_Sahebganj",
+  "state": "Jharkhand",
+  "district": "Sahebganj"
+ },
+ {
+  "config": "Karnataka_Bangalore",
+  "state": "Karnataka",
+  "district": "Bangalore"
+ },
+ {
+  "config": "Karnataka_Belgaum",
+  "state": "Karnataka",
+  "district": "Belgaum"
+ },
+ {
+  "config": "Karnataka_Bellary",
+  "state": "Karnataka",
+  "district": "Bellary"
+ },
+ {
+  "config": "Karnataka_Bidar",
+  "state": "Karnataka",
+  "district": "Bidar"
+ },
+ {
+  "config": "Karnataka_Bijapur",
+  "state": "Karnataka",
+  "district": "Bijapur"
+ },
+ {
+  "config": "Karnataka_Chamarajanagar",
+  "state": "Karnataka",
+  "district": "Chamarajanagar"
+ },
+ {
+  "config": "Karnataka_DakshinaKannada",
+  "state": "Karnataka",
+  "district": "DakshinaKannada"
+ },
+ {
+  "config": "Karnataka_Dharwad",
+  "state": "Karnataka",
+  "district": "Dharwad"
+ },
+ {
+  "config": "Karnataka_Gulbarga",
+  "state": "Karnataka",
+  "district": "Gulbarga"
+ },
+ {
+  "config": "Karnataka_Koppal",
+  "state": "Karnataka",
+  "district": "Koppal"
+ },
+ {
+  "config": "Karnataka_Mysore",
+  "state": "Karnataka",
+  "district": "Mysore"
+ },
+ {
+  "config": "Karnataka_Raichur",
+  "state": "Karnataka",
+  "district": "Raichur"
+ },
+ {
+  "config": "Karnataka_Shimoga",
+  "state": "Karnataka",
+  "district": "Shimoga"
+ },
+ {
+  "config": "Kerala_Kasaragod",
+  "state": "Kerala",
+  "district": "Kasaragod"
+ },
+ {
+  "config": "Kerala_Kollam",
+  "state": "Kerala",
+  "district": "Kollam"
+ },
+ {
+  "config": "Kerala_Kozhikode",
+  "state": "Kerala",
+  "district": "Kozhikode"
+ },
+ {
+  "config": "Kerala_Thiruvananthapuram",
+  "state": "Kerala",
+  "district": "Thiruvananthapuram"
+ },
+ {
+  "config": "Kerala_Wayanad",
+  "state": "Kerala",
+  "district": "Wayanad"
+ },
+ {
+  "config": "MadhyaPradesh_Bhopal",
+  "state": "MadhyaPradesh",
+  "district": "Bhopal"
+ },
+ {
+  "config": "MadhyaPradesh_Dhar",
+  "state": "MadhyaPradesh",
+  "district": "Dhar"
+ },
+ {
+  "config": "MadhyaPradesh_Katni",
+  "state": "MadhyaPradesh",
+  "district": "Katni"
+ },
+ {
+  "config": "MadhyaPradesh_Umaria",
+  "state": "MadhyaPradesh",
+  "district": "Umaria"
+ },
+ {
+  "config": "Maharashtra_Aurangabad",
+  "state": "Maharashtra",
+  "district": "Aurangabad"
+ },
+ {
+  "config": "Maharashtra_Chandrapur",
+  "state": "Maharashtra",
+  "district": "Chandrapur"
+ },
+ {
+  "config": "Maharashtra_Dhule",
+  "state": "Maharashtra",
+  "district": "Dhule"
+ },
+ {
+  "config": "Maharashtra_Gondia",
+  "state": "Maharashtra",
+  "district": "Gondia"
+ },
+ {
+  "config": "Maharashtra_Mumbaisuburban",
+  "state": "Maharashtra",
+  "district": "Mumbaisuburban"
+ },
+ {
+  "config": "Maharashtra_Nagpur",
+  "state": "Maharashtra",
+  "district": "Nagpur"
+ },
+ {
+  "config": "Maharashtra_Pune",
+  "state": "Maharashtra",
+  "district": "Pune"
+ },
+ {
+  "config": "Maharashtra_Sindhudurg",
+  "state": "Maharashtra",
+  "district": "Sindhudurg"
+ },
+ {
+  "config": "Maharashtra_Solapur",
+  "state": "Maharashtra",
+  "district": "Solapur"
+ },
+ {
+  "config": "Maharashtra_Washim",
+  "state": "Maharashtra",
+  "district": "Washim"
+ },
+ {
+  "config": "Manipur_ImphalWest",
+  "state": "Manipur",
+  "district": "ImphalWest"
+ },
+ {
+  "config": "Meghalaya_NorthGaroHills",
+  "state": "Meghalaya",
+  "district": "NorthGaroHills"
+ },
+ {
+  "config": "Meghalaya_SouthGarohills",
+  "state": "Meghalaya",
+  "district": "SouthGarohills"
+ },
+ {
+  "config": "Meghalaya_WestGaroHills",
+  "state": "Meghalaya",
+  "district": "WestGaroHills"
+ },
+ {
+  "config": "Mizoram_Aizawl",
+  "state": "Mizoram",
+  "district": "Aizawl"
+ },
+ {
+  "config": "Nagaland_Dimapur",
+  "state": "Nagaland",
+  "district": "Dimapur"
+ },
+ {
+  "config": "Nagaland_Kohima",
+  "state": "Nagaland",
+  "district": "Kohima"
+ },
+ {
+  "config": "Odisha_Khordha",
+  "state": "Odisha",
+  "district": "Khordha"
+ },
+ {
+  "config": "Odisha_Malkangiri",
+  "state": "Odisha",
+  "district": "Malkangiri"
+ },
+ {
+  "config": "Odisha_Nuapada",
+  "state": "Odisha",
+  "district": "Nuapada"
+ },
+ {
+  "config": "Odisha_Sambalpur",
+  "state": "Odisha",
+  "district": "Sambalpur"
+ },
+ {
+  "config": "Punjab_Fazilka",
+  "state": "Punjab",
+  "district": "Fazilka"
+ },
+ {
+  "config": "Punjab_Kapurthala",
+  "state": "Punjab",
+  "district": "Kapurthala"
+ },
+ {
+  "config": "Punjab_Pathankot",
+  "state": "Punjab",
+  "district": "Pathankot"
+ },
+ {
+  "config": "Rajasthan_Barmer",
+  "state": "Rajasthan",
+  "district": "Barmer"
+ },
+ {
+  "config": "Rajasthan_Bikaner",
+  "state": "Rajasthan",
+  "district": "Bikaner"
+ },
+ {
+  "config": "Rajasthan_Churu",
+  "state": "Rajasthan",
+  "district": "Churu"
+ },
+ {
+  "config": "Rajasthan_Jaipur",
+  "state": "Rajasthan",
+  "district": "Jaipur"
+ },
+ {
+  "config": "Rajasthan_Jaisalmer",
+  "state": "Rajasthan",
+  "district": "Jaisalmer"
+ },
+ {
+  "config": "Rajasthan_Nagaur",
+  "state": "Rajasthan",
+  "district": "Nagaur"
+ },
+ {
+  "config": "Sikkim_Gangtok",
+  "state": "Sikkim",
+  "district": "Gangtok"
+ },
+ {
+  "config": "TamilNadu_Chennai",
+  "state": "TamilNadu",
+  "district": "Chennai"
+ },
+ {
+  "config": "TamilNadu_Kanyakumari",
+  "state": "TamilNadu",
+  "district": "Kanyakumari"
+ },
+ {
+  "config": "TamilNadu_Namakkal",
+  "state": "TamilNadu",
+  "district": "Namakkal"
+ },
+ {
+  "config": "TamilNadu_Nilgiris",
+  "state": "TamilNadu",
+  "district": "Nilgiris"
+ },
+ {
+  "config": "Telangana_Adilabad",
+  "state": "Telangana",
+  "district": "Adilabad"
+ },
+ {
+  "config": "Telangana_Hyderabad",
+  "state": "Telangana",
+  "district": "Hyderabad"
+ },
+ {
+  "config": "Telangana_Karimnagar",
+  "state": "Telangana",
+  "district": "Karimnagar"
+ },
+ {
+  "config": "Telangana_KomaramBheem",
+  "state": "Telangana",
+  "district": "KomaramBheem"
+ },
+ {
+  "config": "Telangana_Mahabubabad",
+  "state": "Telangana",
+  "district": "Mahabubabad"
+ },
+ {
+  "config": "Telangana_Nalgonda",
+  "state": "Telangana",
+  "district": "Nalgonda"
+ },
+ {
+  "config": "Tripura_Dhalai",
+  "state": "Tripura",
+  "district": "Dhalai"
+ },
+ {
+  "config": "Tripura_SouthTripura",
+  "state": "Tripura",
+  "district": "SouthTripura"
+ },
+ {
+  "config": "Tripura_Unakoti",
+  "state": "Tripura",
+  "district": "Unakoti"
+ },
+ {
+  "config": "Tripura_WestTripura",
+  "state": "Tripura",
+  "district": "WestTripura"
+ },
+ {
+  "config": "UttarPradesh_Budaun",
+  "state": "UttarPradesh",
+  "district": "Budaun"
+ },
+ {
+  "config": "UttarPradesh_Deoria",
+  "state": "UttarPradesh",
+  "district": "Deoria"
+ },
+ {
+  "config": "UttarPradesh_Etah",
+  "state": "UttarPradesh",
+  "district": "Etah"
+ },
+ {
+  "config": "UttarPradesh_Ghazipur",
+  "state": "UttarPradesh",
+  "district": "Ghazipur"
+ },
+ {
+  "config": "UttarPradesh_Gorakhpur",
+  "state": "UttarPradesh",
+  "district": "Gorakhpur"
+ },
+ {
+  "config": "UttarPradesh_Hamirpur",
+  "state": "UttarPradesh",
+  "district": "Hamirpur"
+ },
+ {
+  "config": "UttarPradesh_Jalaun",
+  "state": "UttarPradesh",
+  "district": "Jalaun"
+ },
+ {
+  "config": "UttarPradesh_JyotibaPhuleNagar",
+  "state": "UttarPradesh",
+  "district": "JyotibaPhuleNagar"
+ },
+ {
+  "config": "UttarPradesh_Lalitpur",
+  "state": "UttarPradesh",
+  "district": "Lalitpur"
+ },
+ {
+  "config": "UttarPradesh_Lucknow",
+  "state": "UttarPradesh",
+  "district": "Lucknow"
+ },
+ {
+  "config": "UttarPradesh_Muzaffarnagar",
+  "state": "UttarPradesh",
+  "district": "Muzaffarnagar"
+ },
+ {
+  "config": "UttarPradesh_Saharanpur",
+  "state": "UttarPradesh",
+  "district": "Saharanpur"
+ },
+ {
+  "config": "UttarPradesh_Shamli",
+  "state": "UttarPradesh",
+  "district": "Shamli"
+ },
+ {
+  "config": "UttarPradesh_Varanasi",
+  "state": "UttarPradesh",
+  "district": "Varanasi"
+ },
+ {
+  "config": "Uttarakhand_TehriGarhwal",
+  "state": "Uttarakhand",
+  "district": "TehriGarhwal"
+ },
+ {
+  "config": "Uttarakhand_Uttarkashi",
+  "state": "Uttarakhand",
+  "district": "Uttarkashi"
+ },
+ {
+  "config": "WestBengal_Alipurduar",
+  "state": "WestBengal",
+  "district": "Alipurduar"
+ },
+ {
+  "config": "WestBengal_CoochBehar",
+  "state": "WestBengal",
+  "district": "CoochBehar"
+ },
+ {
+  "config": "WestBengal_DakshinDinajpur",
+  "state": "WestBengal",
+  "district": "DakshinDinajpur"
+ },
+ {
+  "config": "WestBengal_Darjeeling",
+  "state": "WestBengal",
+  "district": "Darjeeling"
+ },
+ {
+  "config": "WestBengal_Jalpaiguri",
+  "state": "WestBengal",
+  "district": "Jalpaiguri"
+ },
+ {
+  "config": "WestBengal_Jhargram",
+  "state": "WestBengal",
+  "district": "Jhargram"
+ },
+ {
+  "config": "WestBengal_Kolkata",
+  "state": "WestBengal",
+  "district": "Kolkata"
+ },
+ {
+  "config": "WestBengal_Malda",
+  "state": "WestBengal",
+  "district": "Malda"
+ },
+ {
+  "config": "WestBengal_North24Parganas",
+  "state": "WestBengal",
+  "district": "North24Parganas"
+ },
+ {
+  "config": "WestBengal_PaschimMedinipur",
+  "state": "WestBengal",
+  "district": "PaschimMedinipur"
+ },
+ {
+  "config": "WestBengal_Purulia",
+  "state": "WestBengal",
+  "district": "Purulia"
+ }
+]
