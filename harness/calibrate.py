@@ -32,6 +32,7 @@ import numpy as np
 import soundfile as sf
 from datasets import Audio, load_dataset
 
+from harness.annotations import clean_reference
 from harness.score import aggregate, score_clip
 
 DATASET = "ARTPARK-IISc/Vaani-Benchmark-V1.0"
@@ -177,10 +178,13 @@ def _inter_annotator_wer(manifest: list[dict]) -> float | None:
     """
     scores = []
     for clip in manifest:
+        # Both sides need cleaning here. score_pair strips annotations from the
+        # reference only, because a hypothesis is normally model output with no
+        # markup in it. v2 is a human transcript and carries the same tags.
         scores.append(
             score_clip(
                 {**clip, "transcript": clip[REFERENCE_FIELDS[0]]},
-                clip[REFERENCE_FIELDS[1]],
+                clean_reference(clip[REFERENCE_FIELDS[1]]).text,
                 "human-v2",
             )
         )

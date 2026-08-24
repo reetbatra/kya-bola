@@ -94,3 +94,22 @@ def test_empty_inputs(raw):
     out = clean_reference(raw)
     assert out.empty_after_clean is True
     assert out.text == ""
+
+
+def test_tag_names_may_contain_spaces():
+    """`<static noise>` is real, from Vaani-Benchmark-V1.0.
+
+    A pattern that required a single-word tag name left "static noise" in the
+    reference as two phantom words, inflating every score computed against it.
+    """
+    out = clean_reference("<static noise> होटल का नेम पिकाडू है। </static noise>")
+    assert out.text == "होटल का नेम पिकाडू है।"
+    assert "static" not in out.text and "noise" not in out.text
+
+
+def test_uppercase_tags():
+    assert clean_reference("यहाँ पे <PAUSE> बहुत सारा").text == "यहाँ पे बहुत सारा"
+
+
+def test_hyphenated_tag_names():
+    assert clean_reference("<lip-smack> अच्छा </lip-smack>").text == "अच्छा"
