@@ -63,27 +63,31 @@ export function Explorer({ topology, runs, unmapped }: Props) {
           ))}
         </div>
 
-        <div className="mb-4 flex flex-wrap items-center gap-2 text-sm">
-          <span className="text-[var(--muted)]">language</span>
-          <button
-            onClick={() => setLanguage(null)}
-            className={`rounded border px-2 py-0.5 ${
-              language === null ? "border-[var(--accent)]" : "border-[var(--border)]"
-            }`}
+        <div className="mb-4 flex flex-wrap items-center gap-3 text-sm">
+          <label htmlFor="language" className="text-[var(--muted)]">
+            language
+          </label>
+          <select
+            id="language"
+            value={language ?? ""}
+            onChange={(e) => setLanguage(e.target.value || null)}
+            className="rounded border border-[var(--border)] bg-[var(--surface)] px-2 py-1 text-[var(--text)]"
           >
-            all
-          </button>
-          {languages.map((l) => (
+            <option value="">all languages</option>
+            {languages.map((l) => (
+              <option key={l} value={l}>
+                {l}
+              </option>
+            ))}
+          </select>
+          {language && (
             <button
-              key={l}
-              onClick={() => setLanguage(l)}
-              className={`rounded border px-2 py-0.5 ${
-                language === l ? "border-[var(--accent)]" : "border-[var(--border)]"
-              }`}
+              onClick={() => setLanguage(null)}
+              className="text-[var(--muted)] underline underline-offset-4 hover:text-[var(--text)]"
             >
-              {l}
+              clear
             </button>
-          ))}
+          )}
         </div>
 
         <IndiaMap topology={topology} values={values} metricLabel="error rate" />

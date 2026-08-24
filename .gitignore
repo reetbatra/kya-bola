@@ -24,3 +24,4 @@ data/trial_manifest.jsonl
 data/trial_transcripts.jsonl
 data/trial_results.json
 data/garo_manifest.jsonl
+.gstack/

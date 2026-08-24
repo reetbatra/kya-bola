@@ -101,11 +101,20 @@ export function CoverageTable({
           </tbody>
         </table>
       </div>
-      <p className="mt-3 text-xs text-[var(--muted)]">
-        CER is reported as primary for Dravidian languages, where one long
-        agglutinated token can carry a whole clause and word error rate
-        over-punishes a single wrong morpheme.
-      </p>
+      <div className="mt-3 space-y-1 text-xs text-[var(--muted)]">
+        <p>
+          CER is reported as primary for Dravidian languages, where one long
+          agglutinated token can carry a whole clause and word error rate
+          over-punishes a single wrong morpheme.
+        </p>
+        <p>
+          Rates above 100% are real, not a bug. Word error rate counts
+          insertions as well as substitutions and deletions, so a model that
+          returns more words than were spoken can exceed the length of the
+          reference. It usually means the model is producing fluent text in the
+          wrong language rather than declining to answer.
+        </p>
+      </div>
     </div>
   );
 }
