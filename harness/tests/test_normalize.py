@@ -98,3 +98,19 @@ def test_unknown_script_does_not_crash():
     out, script = normalize("𑄌𑄋𑄴𑄟𑄳𑄦")  # Chakma
     assert script == "Chakma"
     assert out
+
+
+def test_arabic_diacritic_order_does_not_count_as_an_error():
+    """Real Kashmiri pair from the corpus: same letters, different mark order.
+
+    NFC does not reorder Arabic short-vowel marks, so چُھ and چھُ compare
+    unequal despite being the same word. Harakat are optional in Urdu and
+    Kashmiri writing, so both sides are stripped.
+    """
+    assert normalize("یہِ چُھ اکھ")[0] == normalize("یہِ چھُ اَکھ")[0]
+
+
+def test_arabic_stripping_does_not_touch_brahmic_marks():
+    """The Arabic rule must not leak into Devanagari, where marks are load-bearing."""
+    out, _ = normalize("नमस्ते")
+    assert "्" in out and "े" in out

@@ -68,6 +68,22 @@ _WS = re.compile(r"\s+")
 # written in Latin script: stripping it merges "ong·a" into "onga".
 _KEEP_PUNCT = frozenset("\u00b7")
 
+# Arabic-script short-vowel marks (harakat). These are optional in Urdu and
+# Kashmiri writing and their ORDER relative to a following letter is not fixed,
+# so NFC does not reorder them: a reference writing چُھ and a hypothesis writing
+# چھُ are the same word with the same letters, but compare unequal. Standard
+# practice in Arabic-script ASR evaluation is to strip them from both sides.
+#
+# This is category Mn, the one category we otherwise never touch. It is safe
+# here and only here, because unlike a Brahmic matra these marks carry no
+# consonant-vowel distinction that the base letters do not already encode.
+_ARABIC_DIACRITICS = frozenset(
+    [chr(c) for c in range(0x064B, 0x0660)]
+    + [chr(0x0670)]
+    + [chr(c) for c in range(0x06D6, 0x06EE)]
+    + [chr(0x0640)]  # tatweel, a purely cosmetic letter-stretching character
+)
+
 
 def detect_script(text: str) -> str:
     """Return the dominant script of `text`, ignoring spaces and digits."""
@@ -125,6 +141,8 @@ def normalize(text: str, script: str | None = None) -> tuple[str, str]:
         text = _normalizer(code).normalize(text)
 
     text = text.translate(_DIGIT_MAP)
+    if script == "Arabic":
+        text = "".join(ch for ch in text if ch not in _ARABIC_DIACRITICS)
     text = strip_punct_and_symbols(text)
 
     if script in ("Latin", "Unknown"):
