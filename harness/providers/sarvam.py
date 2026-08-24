@@ -16,7 +16,12 @@ import time
 import requests
 
 from harness.languages import SARVAM_CODES
-from harness.providers.base import Provider, RateLimiter, Transcription
+from harness.providers.base import (
+    Provider,
+    ProviderQuotaError,
+    RateLimiter,
+    Transcription,
+)
 
 ENDPOINT = "https://api.sarvam.ai/speech-to-text"
 
@@ -90,10 +95,16 @@ class SarvamProvider(Provider):
             if response.status_code >= 400:
                 # 4xx other than 429 is a real refusal (e.g. unsupported
                 # language). Do not retry -- record it as the result.
+                body = response.text[:300]
+                if response.status_code in (401, 402, 403) or "quota" in body.lower():
+                    raise ProviderQuotaError(
+                        f"{self.name}: {response.status_code} {body}"
+                    )
                 return Transcription(
                     text=None,
-                    error=f"{response.status_code}: {response.text[:300]}",
+                    error=f"{response.status_code}: {body}",
                     latency_s=latency,
+                    failure_kind="refusal",
                 )
 
             payload = response.json()
@@ -104,4 +115,8 @@ class SarvamProvider(Provider):
                 latency_s=latency,
             )
 
-        return Transcription(text=None, error=f"exhausted retries: {last_error}")
+        return Transcription(
+            text=None,
+            error=f"exhausted retries: {last_error}",
+            failure_kind="infrastructure",
+        )

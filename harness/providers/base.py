@@ -12,18 +12,30 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
 
+class ProviderQuotaError(RuntimeError):
+    """The account is out of credits. Stop the run; do not score the rest."""
+
+
 @dataclass(frozen=True)
 class Transcription:
     """One provider's answer for one clip.
 
-    `text` is None when the provider failed or refused. That is recorded as a
-    failed clip, never dropped -- see score.score_pair.
+    `text` is None for two very different reasons, and conflating them would
+    corrupt the benchmark:
+
+    * `failure_kind="refusal"` -- the model was asked and produced nothing, or
+      the API rejected the request on its merits (an unsupported language, say).
+      That is a real failure by the provider and scores 1.0.
+    * `failure_kind="infrastructure"` -- quota exhausted, auth rejected, network
+      dropped. The model never got a fair shot, so the clip is excluded rather
+      than counted against it.
     """
     text: str | None
     detected_language: str | None = None
     language_probability: float | None = None
     error: str | None = None
     latency_s: float | None = None
+    failure_kind: str | None = None  # None | "refusal" | "infrastructure"
 
 
 class RateLimiter:

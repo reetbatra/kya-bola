@@ -15,7 +15,7 @@ from pathlib import Path
 from tqdm import tqdm
 
 from harness.languages import get as get_language
-from harness.providers.base import Provider, Transcription
+from harness.providers.base import Provider, ProviderQuotaError, Transcription
 from harness.score import aggregate, district_mean_std, score_clip
 
 
@@ -51,9 +51,16 @@ def transcribe_all(
     with cache_path.open("a") as out:
         for clip in tqdm(todo, desc=provider.name, unit="clip"):
             language = get_language(clip["language"])
-            result: Transcription = provider.transcribe(
-                str(data_dir / clip["wav"]), language.request_code
-            )
+            try:
+                result: Transcription = provider.transcribe(
+                    str(data_dir / clip["wav"]), language.request_code
+                )
+            except ProviderQuotaError as exc:
+                # Stop immediately. Continuing would write hundreds of rows that
+                # look like model failures but are really an empty wallet.
+                print(f"\n!! {exc}")
+                print(f"!! stopping {provider.name} after {len(cache)} cached clips")
+                break
             row = {
                 "provider": provider.name,
                 "clip_id": clip["clip_id"],
@@ -73,25 +80,31 @@ def transcribe_all(
 def score_all(manifest: list[dict], transcripts: dict[str, dict], provider_name: str):
     scores = []
     for clip in manifest:
-        row = transcripts.get(clip["clip_id"])
-        scores.append(score_clip(clip, (row or {}).get("text"), provider_name))
+        row = transcripts.get(clip["clip_id"]) or {}
+        kind = row.get("failure_kind")
+        if not row:
+            # Never attempted (run stopped early). Exclude, do not blame.
+            kind = "infrastructure"
+        scores.append(score_clip(clip, row.get("text"), provider_name, kind))
     return scores
 
 
 def summarize(scores, provider_name: str) -> dict:
     overall = aggregate(scores, by=("language",), min_clips=1)
     stats = district_mean_std(scores, "wer")
-    errors = sum(s.empty_hypothesis for s in scores)
+    scored = [s for s in scores if s.excluded is None]
+    excluded = len(scores) - len(scored)
+    errors = sum(s.empty_hypothesis for s in scored)
 
     print(f"\n=== {provider_name} ===")
-    print(f"clips scored     : {len(scores)}")
-    print(f"failed/empty     : {errors} ({errors / max(len(scores), 1):.1%})")
+    print(f"clips scored     : {len(scored)} of {len(scores)} ({excluded} excluded)")
+    print(f"model returned nothing: {errors} ({errors / max(len(scored), 1):.1%})")
     for agg in sorted(overall, key=lambda a: -(a.primary or 0)):
         star = " *" if agg.low_confidence else ""
         wer = "n/a" if agg.wer is None else f"{agg.wer:.1%}"
         cer = "n/a" if agg.cer is None else f"{agg.cer:.1%}"
         print(
-            f"  {agg.key[0]:<16} n={agg.clips:<5} WER {wer:>7}  CER {cer:>7}  "
+            f"  {agg.key[0]:<16} n={agg.scored:<5} WER {wer:>7}  CER {cer:>7}  "
             f"(primary: {agg.primary_metric}){star}"
         )
     if stats:
@@ -101,6 +114,8 @@ def summarize(scores, provider_name: str) -> dict:
     return {
         "provider": provider_name,
         "clips": len(scores),
+        "scored": len(scored),
+        "excluded": excluded,
         "empty": errors,
         "by_language": [a.as_dict() for a in overall],
         "by_district": [a.as_dict() for a in aggregate(scores, by=("district",), min_clips=1)],

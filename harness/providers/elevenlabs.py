@@ -17,7 +17,12 @@ import time
 
 import requests
 
-from harness.providers.base import Provider, RateLimiter, Transcription
+from harness.providers.base import (
+    Provider,
+    ProviderQuotaError,
+    RateLimiter,
+    Transcription,
+)
 
 ENDPOINT = "https://api.elevenlabs.io/v1/speech-to-text"
 DEFAULT_MODEL = "scribe_v2"
@@ -95,10 +100,19 @@ class ElevenLabsProvider(Provider):
                 continue
 
             if response.status_code >= 400:
+                body = response.text[:300]
+                # Quota and auth failures mean the model never got a fair shot.
+                # Raising stops the run instead of silently recording hundreds
+                # of clips as model failures.
+                if "quota_exceeded" in body or response.status_code == 401:
+                    raise ProviderQuotaError(
+                        f"{self.name}: {response.status_code} {body}"
+                    )
                 return Transcription(
                     text=None,
-                    error=f"{response.status_code}: {response.text[:300]}",
+                    error=f"{response.status_code}: {body}",
                     latency_s=latency,
+                    failure_kind="refusal",
                 )
 
             payload = response.json()
@@ -109,4 +123,8 @@ class ElevenLabsProvider(Provider):
                 latency_s=latency,
             )
 
-        return Transcription(text=None, error=f"exhausted retries: {last_error}")
+        return Transcription(
+            text=None,
+            error=f"exhausted retries: {last_error}",
+            failure_kind="infrastructure",
+        )

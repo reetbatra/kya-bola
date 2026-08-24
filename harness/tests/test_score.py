@@ -139,3 +139,46 @@ def test_district_mean_std_matches_paper_shape():
 def test_district_mean_std_needs_two_districts():
     scores = [score_clip(_clip("a", "Hindi", "D1", "एक दो"), "एक दो", "sarvam")]
     assert district_mean_std(scores) is None
+
+
+def test_infrastructure_failure_is_excluded_not_blamed():
+    """Quota exhaustion is an empty wallet, not a bad model.
+
+    This is the ElevenLabs case: the account ran out of credits mid-run and 70
+    of 81 clips came back empty. Scored as refusals that reads as 91% WER,
+    which would be a completely fabricated result.
+    """
+    clip = _clip("a", "Hindi", "D1", "नमस्ते दुनिया")
+    s = score_clip(clip, None, "elevenlabs", failure_kind="infrastructure")
+    assert s.wer is None and s.cer is None
+    assert s.excluded == "provider_error"
+
+
+def test_refusal_still_scores_one():
+    """An API that refuses an unsupported language HAS failed the clip."""
+    clip = _clip("a", "Garo", "WestGaroHills", "ia nokni rongde")
+    s = score_clip(clip, None, "sarvam", failure_kind="refusal")
+    assert s.wer == 1.0
+    assert s.excluded is None
+
+
+def test_excluded_clips_do_not_move_the_aggregate():
+    clip_ok = _clip("a", "Hindi", "D1", "एक दो")
+    clip_dead = _clip("b", "Hindi", "D1", "तीन चार")
+    scores = [
+        score_clip(clip_ok, "एक दो", "p"),
+        score_clip(clip_dead, None, "p", failure_kind="infrastructure"),
+    ]
+    agg = aggregate(scores, by=("language",), min_clips=1)[0]
+    assert agg.wer == 0.0, "an excluded clip must not drag the score"
+    assert agg.scored == 1 and agg.excluded == 1
+
+
+def test_low_confidence_counts_only_scored_clips():
+    scores = [
+        score_clip(_clip(str(i), "Hindi", "D1", "एक दो"), None, "p",
+                   failure_kind="infrastructure")
+        for i in range(50)
+    ]
+    agg = aggregate(scores, by=("language",), min_clips=10)[0]
+    assert agg.low_confidence is True, "50 excluded clips are not 50 data points"

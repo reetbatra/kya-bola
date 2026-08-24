@@ -43,7 +43,11 @@ class ClipScore:
         return asdict(self)
 
 
-def score_pair(reference: str, hypothesis: str | None) -> dict:
+def score_pair(
+    reference: str,
+    hypothesis: str | None,
+    failure_kind: str | None = None,
+) -> dict:
     """Score one reference/hypothesis pair.
 
     The reference is first stripped of Vaani transcriber annotations. Scored
@@ -57,6 +61,16 @@ def score_pair(reference: str, hypothesis: str | None) -> dict:
     the ground truth itself is untrustworthy, so it scores None and is excluded
     rather than blamed on the model.
     """
+    if failure_kind == "infrastructure":
+        # Quota exhausted, auth rejected, network dropped. The model never got
+        # a fair shot at this clip, so it is excluded rather than scored 1.0.
+        return {
+            "wer": None, "cer": None, "ref_words": 0, "ref_chars": 0,
+            "script": "Unknown", "empty_hypothesis": True,
+            "reference_norm": "", "hypothesis_norm": "",
+            "excluded": "provider_error",
+        }
+
     cleaned = clean_reference(reference)
     if not cleaned.usable:
         return {
@@ -100,9 +114,14 @@ def score_pair(reference: str, hypothesis: str | None) -> dict:
     }
 
 
-def score_clip(clip: dict, hypothesis: str | None, provider: str) -> ClipScore:
+def score_clip(
+    clip: dict,
+    hypothesis: str | None,
+    provider: str,
+    failure_kind: str | None = None,
+) -> ClipScore:
     """Score one manifest row against a provider's output."""
-    result = score_pair(clip["transcript"], hypothesis)
+    result = score_pair(clip["transcript"], hypothesis, failure_kind)
     return ClipScore(
         clip_id=clip["clip_id"],
         language=clip["language"],
@@ -137,6 +156,8 @@ class Aggregate:
     key: tuple
     provider: str
     clips: int
+    scored: int
+    excluded: int
     wer: float | None
     cer: float | None
     primary_metric: str
@@ -180,12 +201,17 @@ def aggregate(
                 key=tuple(group_key),
                 provider=provider,
                 clips=len(group),
+                scored=sum(1 for s in group if s.excluded is None),
+                excluded=sum(1 for s in group if s.excluded is not None),
                 wer=wer,
                 cer=cer,
                 primary_metric=metric,
                 primary=cer if metric == "cer" else wer,
-                empty_rate=sum(s.empty_hypothesis for s in group) / len(group),
-                low_confidence=len(group) < min_clips,
+                empty_rate=(
+                    sum(s.empty_hypothesis for s in group if s.excluded is None)
+                    / max(sum(1 for s in group if s.excluded is None), 1)
+                ),
+                low_confidence=sum(1 for s in group if s.excluded is None) < min_clips,
             )
         )
     return out
