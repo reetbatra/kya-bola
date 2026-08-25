@@ -62,6 +62,30 @@ So the finding isn't that the API is bad. It clearly isn't. It's that the
 published support list and the actual behaviour are two different things, and
 only one of them is written down anywhere.
 
+## Three systems, and the open one holds up
+
+Once the free option was in, the comparison stopped being a walkover. On the 19
+languages all three support:
+
+| language | IndicConformer | Saaras v3 | Saaras v4 |
+|---|---|---|---|
+| Hindi | **19.5%** | 22.2% | 21.0% |
+| Urdu | **36.5%** | 48.8% | 47.8% |
+| Manipuri | **21.4%** | 26.7% | 26.7% |
+| Tamil | 27.0% | 32.0% | **22.7%** |
+| Odia | 56.3% | 60.5% | **41.9%** |
+| Santali | 83.2% | 84.2% | **58.6%** |
+
+AI4Bharat's IndicConformer is MIT licensed, runs on a laptop, costs nothing,
+and beats a paid API on Hindi, Urdu and Manipuri. Saaras v4 wins clearly on
+Santali, Odia and Tamil, and beats v3 almost everywhere. If you are building for
+one specific language, the ranking is language by language and the vendor
+comparison table on anyone's marketing page will not tell you which.
+
+IndicConformer also refuses outright for the 45 languages it does not cover,
+which is worth something. Refusing is more useful to a developer than fluent
+Hindi returned for a Tagin speaker.
+
 ## Why you should believe the numbers
 
 Before measuring anything new, I reproduced a published result.
