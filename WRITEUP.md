@@ -1,8 +1,8 @@
 # India speaks 64 languages in this dataset. Speech APIs support 19.
 
 Every speech recognition vendor publishes one accuracy number per language.
-Hindi: 92%. Tamil: 89%. Tidy numbers, and close to meaningless, because Hindi
-in Delhi and Hindi in Araria aren't the same problem.
+One figure for Hindi, one for Tamil. Tidy, and close to meaningless, because
+Hindi in Delhi and Hindi in Araria aren't the same problem.
 
 I wanted to know how big that difference actually is, so I measured it district
 by district.
