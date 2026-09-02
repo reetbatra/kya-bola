@@ -38,9 +38,13 @@ function median(ns: number[]) {
 export function SupportList({
   runs,
   supported,
+  compact = false,
 }: {
   runs: ProviderRun[];
   supported: Record<string, boolean>;
+  /** Hero version: the two rows and one sentence, with the full argument left
+   *  to the coverage section further down. */
+  compact?: boolean;
 }) {
   const run = runs.find((r) => r.provider === "sarvam:saaras:v3") ?? runs[0];
   if (!run) return null;
@@ -58,7 +62,10 @@ export function SupportList({
   const beating = unlisted.filter((r) => r.wer < worst.wer).length;
 
   return (
-    <figure className="my-10">
+    <figure className={compact ? "mt-10" : "my-10"}>
+      {compact && (
+        <p className="eyebrow mb-3">The support list, against what happened</p>
+      )}
       <div className="overflow-hidden rounded-lg border border-[var(--border)]">
         {[
           { r: best, listed: false },
@@ -94,6 +101,23 @@ export function SupportList({
       </div>
 
       <figcaption className="mt-4 max-w-[62ch] text-sm leading-relaxed text-[var(--muted)]">
+        {compact ? (
+          <>
+            Both on Sarvam Saaras v3.{" "}
+            <span className="text-[var(--text)]">{best.language}</span> is on
+            nobody&rsquo;s support list and beats{" "}
+            <span className="text-[var(--text)]">{worst.language}</span>, which is on it, by{" "}
+            {(worst.wer - best.wer).toFixed(1)} points, on samples of {best.clips} and{" "}
+            {worst.clips} clips.{" "}
+            <a
+              href="#coverage"
+              className="underline decoration-[var(--border-2)] underline-offset-4 hover:text-[var(--accent)]"
+            >
+              All 64 languages below.
+            </a>
+          </>
+        ) : (
+          <>
         Both on Sarvam Saaras v3, both scored the same way.{" "}
         <span className="text-[var(--text)]">{best.language}</span> is on nobody&rsquo;s support
         list and beats <span className="text-[var(--text)]">{worst.language}</span>, which is on
@@ -112,6 +136,8 @@ export function SupportList({
         )}{" "}
         Only languages with at least {CLIP_FLOOR} scored clips are eligible for this comparison, so
         it cannot rest on a thin cell.
+          </>
+        )}
       </figcaption>
     </figure>
   );

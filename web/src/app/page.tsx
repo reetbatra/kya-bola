@@ -102,6 +102,9 @@ export default function Home() {
             {results.runs.map((r) => providerLabel(r.provider)).join(", ")}.
           </p>
         )}
+        {results.runs.length > 0 && (
+          <SupportList runs={results.runs} supported={supported} compact />
+        )}
       </header>
 
       <section id="map" className="mb-24 scroll-mt-24" aria-labelledby="map-heading">
