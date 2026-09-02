@@ -2,6 +2,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { Explorer } from "@/components/Explorer";
 import { CoverageTable } from "@/components/CoverageTable";
+import { SupportList } from "@/components/SupportList";
 import { loadResults, loadTopology, loadUnmapped, loadCalibration } from "@/lib/data";
 import { pct } from "@/lib/scale";
 import { nf, providerLabel } from "@/lib/format";
@@ -126,6 +127,7 @@ export default function Home() {
             clip, because that is what a developer building for those speakers
             would experience.
           </SectionHead>
+          <SupportList runs={results.runs} supported={supported} />
           <CoverageTable runs={results.runs} supported={supported} />
         </section>
       )}
