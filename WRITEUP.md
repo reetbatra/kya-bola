@@ -32,35 +32,51 @@ that no commercial API claims to handle at all.
 I sent them anyway, with language detection turned on, because that is what a
 developer building for those speakers would do.
 
-| language | official support | word error rate |
-|---|---|---|
-| Tagin | no | 122.7% |
-| Nyishi | no | 120.2% |
-| Sumi | no | 116.2% |
-| Kokborok | no | 107.9% |
-| Angami | no | 97.4% |
-| ... | | |
-| Santali | **yes** | 84.2% |
-| Kashmiri | **yes** | 35.7% |
-| ... | | |
-| Magahi | no | 16.8% |
-| Khariboli | no | 18.0% |
-| Bundeli | no | 25.3% |
+All figures below are Saaras v3, with the number of scored clips beside each,
+because a language measured on twenty clips and one measured on a hundred are
+not the same kind of claim.
+
+| language | official support | clips | word error rate |
+|---|---|---|---|
+| Garo | no | 56 | 133.0% |
+| Tagin | no | 20 | 122.7% |
+| Nyishi | no | 19 | 120.2% |
+| Sumi | no | 36 | 116.2% |
+| Kokborok | no | 55 | 104.3% |
+| ... | | | |
+| Santali | **yes** | 17 | 84.2% |
+| Odia | **yes** | 120 | 60.5% |
+| Urdu | **yes** | 105 | 48.8% |
+| Kashmiri | **yes** | 50 | 35.7% |
+| ... | | | |
+| Magahi | no | 47 | 29.3% |
+| Bundeli | no | 36 | 25.3% |
+| Khariboli | no | 103 | 24.3% |
+| English | **yes** | 191 | 11.4% |
 
 Rates above 100% are not a bug. Word error rate counts insertions, so a model
 returning more words than were spoken can exceed the length of the reference.
 It means the model is not declining to answer. It is confidently producing
 fluent text in the wrong language.
 
-Look at the bottom of that table, though. Magahi is on nobody's support list and
-scores 16.8%. Santali is on the official list and scores 84.2%. The median
-supported language sits around 36% and the median unsupported one around 66%,
-but the two ranges overlap so heavily that the support list barely predicts
-anything.
+Now look at the bottom of that table. Khariboli is on nobody's support list and
+scores 24.3%. Odia is on the official list and scores 60.5%. Those are 103 and
+120 clips, so neither is a fluke.
 
-So the finding isn't that the API is bad. It clearly isn't. It's that the
-published support list and the actual behaviour are two different things, and
-only one of them is written down anywhere.
+The tempting comparison is Santali, which is on the list and scores 84.2%, but
+it rests on 17 clips and I am not going to hang a claim about a vendor's
+coverage on 17 clips. Restrict this to languages with at least 60 scored clips
+and every single unsupported language that qualifies still beats the worst
+supported one.
+
+Across all 64 languages the median supported one sits at 29% and the median
+unsupported one at 69%. The support list is not meaningless. It is just far
+weaker than it looks: the two ranges overlap enough that knowing a language is
+on the list tells a developer very little about whether it will work.
+
+So the finding isn't that the API is bad. It clearly isn't. English comes back
+at 11.4%. It's that the published support list and the actual behaviour are two
+different things, and only one of them is written down anywhere.
 
 ## Three systems, and the open one holds up
 
